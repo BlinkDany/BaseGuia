@@ -109,8 +109,11 @@ public class provinciaControlador {
         if (vista.getDlg().getTitle().equals("Crear")) {
 
             vista.getBtnGuardar().setText("Registrar");
-            limpiar();
             vista.getTxtCodProvincia().setEnabled(true);
+            if (modelo.insertarProvincia()) {
+                JOptionPane.showMessageDialog(null, "Se ha registrado");
+            }
+            limpiar();
         }
         vista.getDlg().setVisible(true);
     }
