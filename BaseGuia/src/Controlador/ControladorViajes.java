@@ -9,6 +9,7 @@ import Modelo.Viajes;
 import java.util.List;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
+import vistas.VistaViajes;
 
 /**
  *
@@ -33,16 +34,6 @@ public class ControladorViajes {
         vvia.setLocationRelativeTo(null);
         vvia.setTitle("Viajes");
         vvia.btnRegistrar.addActionListener(l -> Registrar());
-        vvia.btnGuardar.addActionListener(l -> AbrirDialog());
-    }
-
-    public void AbrirDialog() {
-
-        vvia.dialogRegistrar.setVisible(true);
-        vvia.dialogRegistrar.setLocationRelativeTo(null);
-        vvia.dialogRegistrar.setTitle("Registrar");
-        vvia.dialogRegistrar.setSize(400, 408);
-
     }
 
     public void Registrar() {
@@ -62,7 +53,6 @@ public class ControladorViajes {
                 if (mvi.RegistrarViajes()) {
                     MessageOk("Se ha registrado con exito");
                     MostrarDatos();
-                    vvia.dialogRegistrar.dispose();
                 } else {
 
                     MessageError("No se ah podido registrar en la base de datos");
