@@ -56,7 +56,7 @@ public class ControladorMenuPrincipal {
         vistas.VistaCamion vista = new VistaCamion();
         Camiones mica = new Camiones();
         vistaPrincipal.getDesctopPrincipal().add(vista);
-        controlador.camionesControlador controlPer = new camionesControlador(model, vista);
+        Controlador.camionesControlador controlPer = new camionesControlador(model, vista);
         controlPer.iniciaControl();
         
 
@@ -66,11 +66,12 @@ public class ControladorMenuPrincipal {
      private void menuCantones () { 
         
         Modelo.cantonModelo mod = new cantonModelo();
+        Modelo.provinciaModelo mp = new provinciaModelo();
         vistas.VistaCantones vis = new VistaCantones();
-      //  Modelo.provinciaModelo mp = new provinciaModelo();
+        
         cantones mica = new cantones();
         vistaPrincipal.getDesctopPrincipal().add(vis);
-        controlador.cantonesControlador controlPro = new cantonesControlador (mod, vis);
+        Controlador.cantonesControlador controlPro = new cantonesControlador (mod, mp, vis);
         controlPro.iniciaControl();
         
 
@@ -84,7 +85,7 @@ public class ControladorMenuPrincipal {
 
         vistaPrincipal.getDesctopPrincipal().add(vis);
         
-        controlador.provinciaControlador pc = new provinciaControlador(mod, vis);
+        Controlador.provinciaControlador pc = new provinciaControlador(mod, vis);
         pc.iniciaControl();
         
 }

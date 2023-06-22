@@ -182,7 +182,7 @@ public class camionesControlador {
                 limpiarDlg();
                 llenarCamposDeTextoCamion();
                 VistaCamion.getDlg().setVisible(true);
-                // crearFactura();
+           
                 
                 mostrarDatosTablaCamion();
             }
@@ -217,7 +217,7 @@ public class camionesControlador {
            
 
                     if (camionModelo.insertarCamion()) {
-                        // vista.getDlgFacturaYdetalle().dispose();
+                        
                         mostrarDatosTablaCamion();
                         
 
@@ -237,7 +237,7 @@ public class camionesControlador {
 
     }
 
-// Verifica si hay campos vacíos en el formulario
+
     public boolean camposVacios() {
         return VistaCamion.getTxtMarca().getText().isEmpty()
                 || VistaCamion.getTxtMatricula().getText().isEmpty()
@@ -252,7 +252,6 @@ public class camionesControlador {
     DefaultTableModel tabla = (DefaultTableModel) VistaCamion.getTblCamion().getModel();
     tabla.setRowCount(0);
 
-    // Obtener la lista de productos
     List<Camiones> listca = camionModelo.listarCamion();
 
     // Crear un objeto de renderizado de celda personalizado
@@ -322,22 +321,20 @@ public class camionesControlador {
             // Limpiar el modelo de datos de la tabla
             tabla.setNumRows(0);
 
-            // Obtener la lista de personas
+            // Obtener la lista 
             List<Camiones> listf = camionModelo.listarCamion();
 
-            // Utilizar un stream para procesar la lista de personas
+            // Utilizar un stream para procesar la lista 
             listf.stream()
-                    // Filtrar las personas por la cédula 
+                    // Filtrar 
                     .filter(p -> placa .equals(p.getMatricula()))
                     // Mapear cada persona filtrada a un objeto "datos" que contiene los valores deseados
                     .map(p -> {
-                        // Calcular la edad a partir de la fecha de nacimiento
 
-                        // Crear un objeto "datos" 
                         Object[] datos = {p.getMatricula(), p.getMarca(), p.getModelo(), p.getPotencia()};
                         return datos;
                     })
-                    // Agregar cada objeto "datos" como una nueva fila al modelo de la tabla
+                 
                     .forEach(tabla::addRow);
         }
     }
