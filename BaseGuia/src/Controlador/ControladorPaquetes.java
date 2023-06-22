@@ -31,11 +31,23 @@ public class ControladorPaquetes {
         vpa.setTitle("Paquetes");
         vpa.btnRegistrar.addActionListener(l -> RegistrarPaquete());
         vpa.btnRfresh.addActionListener(l -> MostrarDatos());
+        vpa.tblProducto.addMouseListener(new MouseAdapter() {
+            @Override
+            public void mouseClicked(MouseEvent e) {
+            
+                LlenarDatos();
+            }
+        });
         vpa.lblBuscar.addMouseListener(new MouseAdapter() {
             @Override
             public void mouseClicked(MouseEvent e) {
-
-                Buscar();
+            
+                if (vpa.txtBuscar.getText().isEmpty()) {
+                    MessageError("Ingrese un codigo");
+                } else {
+                    
+                    Buscar();
+                }
             }
         });
     }
@@ -90,6 +102,24 @@ public class ControladorPaquetes {
 
     }
 
+    public void LlenarDatos(){
+        
+        List<Paquetes> pa = mpa.ListaPaquetes();
+
+        pa.stream().forEach(p -> {
+
+            vpa.txtCanton.setText(String.valueOf(p.getCodCanton()));
+            vpa.txtCod.setText(String.valueOf(p.getCodPaquete()));
+            vpa.txtDescripcion.setText(String.valueOf(p.getDescripcion()));
+            vpa.txtDestinatario.setText(String.valueOf(p.getIdDestinatario()));
+            vpa.txtDireccion.setText(String.valueOf(p.getDireccion()));
+            vpa.txtPeso.setText(String.valueOf(p.getPeso()));
+            vpa.txtPrecio.setText(String.valueOf(p.getPrecio()));
+            vpa.txtRemitente.setText(String.valueOf(p.getIdRemitente()));
+        });
+        
+    }
+    
     public void Buscar() {
 
         DefaultTableModel tabla = (DefaultTableModel) vpa.tblProducto.getModel();

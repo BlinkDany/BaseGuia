@@ -69,13 +69,6 @@ public class MenuPrincipal extends javax.swing.JFrame {
         this.btnEnvios = btnEnvios;
     }
 
-    public JMenu getBtnMenu() {
-        return btnMenu;
-    }
-
-    public void setBtnMenu(JMenu btnMenu) {
-        this.btnMenu = btnMenu;
-    }
 
     public JButton getBtnPaquete() {
         return btnPaquete;
@@ -101,13 +94,6 @@ public class MenuPrincipal extends javax.swing.JFrame {
         this.btnRemitentes = btnRemitentes;
     }
 
-    public JMenuItem getBtnSalir() {
-        return btnSalir;
-    }
-
-    public void setBtnSalir(JMenuItem btnSalir) {
-        this.btnSalir = btnSalir;
-    }
 
     public JButton getBtnViajes() {
         return btnViajes;
@@ -131,7 +117,9 @@ public class MenuPrincipal extends javax.swing.JFrame {
     private void initComponents() {
 
         jMenuItem1 = new javax.swing.JMenuItem();
-        jPanel1 = new javax.swing.JPanel();
+        jPanel3 = new javax.swing.JPanel();
+        jLabel1 = new javax.swing.JLabel();
+        desctopPrincipal = new javax.swing.JDesktopPane();
         toolBar = new javax.swing.JToolBar();
         btnPaquete = new javax.swing.JButton();
         jSeparator4 = new javax.swing.JToolBar.Separator();
@@ -150,19 +138,17 @@ public class MenuPrincipal extends javax.swing.JFrame {
         btnCamiones = new javax.swing.JButton();
         jSeparator8 = new javax.swing.JToolBar.Separator();
         btnCantones = new javax.swing.JButton();
-        jPanel2 = new javax.swing.JPanel();
-        jPanel3 = new javax.swing.JPanel();
-        jLabel1 = new javax.swing.JLabel();
-        desctopPrincipal = new javax.swing.JDesktopPane();
-        jMenuBar1 = new javax.swing.JMenuBar();
-        btnMenu = new javax.swing.JMenu();
-        btnSalir = new javax.swing.JMenuItem();
 
         jMenuItem1.setText("jMenuItem1");
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        jPanel1.setBackground(new java.awt.Color(204, 204, 204));
+        jPanel3.setBackground(new java.awt.Color(204, 204, 204));
+
+        jLabel1.setFont(new java.awt.Font("Yu Gothic Medium", 1, 12)); // NOI18N
+        jLabel1.setText("Guía Practica, Base de Datos");
+
+        desctopPrincipal.setBackground(new java.awt.Color(255, 255, 255));
 
         toolBar.setRollover(true);
 
@@ -237,46 +223,19 @@ public class MenuPrincipal extends javax.swing.JFrame {
         btnCantones.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
         toolBar.add(btnCantones);
 
-        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
-        jPanel1.setLayout(jPanel1Layout);
-        jPanel1Layout.setHorizontalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(toolBar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-        );
-        jPanel1Layout.setVerticalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addComponent(toolBar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, Short.MAX_VALUE))
-        );
-
-        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
-        jPanel2.setLayout(jPanel2Layout);
-        jPanel2Layout.setHorizontalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 0, Short.MAX_VALUE)
-        );
-        jPanel2Layout.setVerticalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 0, Short.MAX_VALUE)
-        );
-
-        jPanel3.setBackground(new java.awt.Color(204, 204, 204));
-
-        jLabel1.setFont(new java.awt.Font("Yu Gothic Medium", 1, 12)); // NOI18N
-        jLabel1.setText("Guía Practica, Base de Datos");
-
-        desctopPrincipal.setBackground(new java.awt.Color(255, 255, 255));
+        desctopPrincipal.setLayer(toolBar, javax.swing.JLayeredPane.DEFAULT_LAYER);
 
         javax.swing.GroupLayout desctopPrincipalLayout = new javax.swing.GroupLayout(desctopPrincipal);
         desctopPrincipal.setLayout(desctopPrincipalLayout);
         desctopPrincipalLayout.setHorizontalGroup(
             desctopPrincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 0, Short.MAX_VALUE)
+            .addComponent(toolBar, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         desctopPrincipalLayout.setVerticalGroup(
             desctopPrincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 632, Short.MAX_VALUE)
+            .addGroup(desctopPrincipalLayout.createSequentialGroup()
+                .addComponent(toolBar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 690, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
@@ -298,53 +257,19 @@ public class MenuPrincipal extends javax.swing.JFrame {
                 .addGap(12, 12, 12))
         );
 
-        btnMenu.setText("Menú");
-
-        btnSalir.setText("Salir");
-        btnSalir.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                btnSalirMouseClicked(evt);
-            }
-        });
-        btnSalir.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnSalirActionPerformed(evt);
-            }
-        });
-        btnMenu.add(btnSalir);
-
-        jMenuBar1.add(btnMenu);
-
-        setJMenuBar(jMenuBar1);
-
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addComponent(jPanel3, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+            .addComponent(jPanel3, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
-    private void btnSalirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSalirActionPerformed
-        
-    }//GEN-LAST:event_btnSalirActionPerformed
-
-    private void btnSalirMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnSalirMouseClicked
-       
-    }//GEN-LAST:event_btnSalirMouseClicked
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
@@ -353,18 +278,13 @@ public class MenuPrincipal extends javax.swing.JFrame {
     private javax.swing.JButton btnConductores;
     private javax.swing.JButton btnDestinarios;
     private javax.swing.JButton btnEnvios;
-    private javax.swing.JMenu btnMenu;
     private javax.swing.JButton btnPaquete;
     private javax.swing.JButton btnProvincias;
     private javax.swing.JButton btnRemitentes;
-    private javax.swing.JMenuItem btnSalir;
     private javax.swing.JButton btnViajes;
     private javax.swing.JDesktopPane desctopPrincipal;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JMenuBar jMenuBar1;
     private javax.swing.JMenuItem jMenuItem1;
-    private javax.swing.JPanel jPanel1;
-    private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JToolBar.Separator jSeparator10;
     private javax.swing.JToolBar.Separator jSeparator11;
