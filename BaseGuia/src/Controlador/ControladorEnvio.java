@@ -36,10 +36,21 @@ public class ControladorEnvio {
             @Override
             public void mouseClicked(MouseEvent e) {
             
-                Buscar();
+                if (ven.txtBuscar.getText().isEmpty()) {
+                    MessageError("Ingrese un codigo");
+                } else {
+                    
+                    Buscar();
+                }
             }
         });
-
+        ven.tblEnvios.addMouseListener(new MouseAdapter() {
+            @Override
+            public void mouseClicked(MouseEvent e) {
+            
+                LlenarDatos();
+            }
+        });
     }
 
     public void Registrar() {
@@ -90,6 +101,24 @@ public class ControladorEnvio {
 
     }
 
+    public void LlenarDatos(){
+        
+        List<Envios> listv = men.ListaEnvios();
+
+        listv.stream().forEach(p -> {
+
+            if (p.getCodEnvios() == ven.tblEnvios.getValueAt(ven.tblEnvios.getSelectedRow(), 0).hashCode()) {
+
+                ven.txtCanton.setText(String.valueOf(p.getCodCanton()));
+                ven.txtCod.setText(String.valueOf(p.getCodEnvios()));
+                ven.txtIdPaquete.setText(String.valueOf(p.getCodPaquete()));
+                ven.txtViaje.setText(String.valueOf(p.getCodViaje()));
+                ven.txtDate.setDate(p.getFehca());
+            }
+        });
+        
+    }
+    
     public void Buscar() {
 
         DefaultTableModel modelo = (DefaultTableModel) ven.tblEnvios.getModel();
