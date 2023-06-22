@@ -30,7 +30,7 @@ public class provinciaModelo extends provincia{
 
         try {
 
-            String sql = "SELECT * FROM public.Provincia";
+            String sql = "SELECT * FROM Provincia";
 
             ResultSet rs = con.Consultas(sql);
 

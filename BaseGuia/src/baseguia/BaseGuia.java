@@ -5,8 +5,7 @@
 package baseguia;
 
 import Controlador.*;
-import Modelo.ModeloPaquetes;
-import Modelo.ModeloViajes;
+import Modelo.*;
 import vistas.*;
 
 /**
@@ -21,11 +20,10 @@ public class BaseGuia {
     public static void main(String[] args) {
         // TODO code application logic here
         
-        Modelo.ModeloViajes v = new ModeloViajes();
-        VistaViajes vi = new VistaViajes();
-        ControladorViajes c = new ControladorViajes(v, vi);
+        MenuPrincipal vi = new MenuPrincipal();
+        ControladorMenuPrincipal c = new ControladorMenuPrincipal(vi);
         
-        c.Iniciar();
+        c.iniciaControl();
         
         System.out.println("Menos ganas de vivir");
     }

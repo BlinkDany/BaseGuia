@@ -27,7 +27,6 @@ public class ControladorPaquetes {
 
         MostrarDatos();
         vpa.setTitle("Paquetes");
-        vpa.setLocationRelativeTo(null);
         vpa.btnRegistrar.addActionListener(l -> RegistrarPaquete());
         vpa.btnRfresh.addActionListener(l -> MostrarDatos());
     }

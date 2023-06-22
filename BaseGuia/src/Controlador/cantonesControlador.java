@@ -208,7 +208,7 @@ public class cantonesControlador {
     public boolean camposVacios() {
         return vista.getTxtCodCantonPk().getText().isEmpty()
                 || vista.getTxtCodProFK().getText().isEmpty()
-                || vista.getTxtNombreCanton().getText().isBlank();
+                || vista.getTxtNombreCanton().getText().isEmpty();
                 
     }
 

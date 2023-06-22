@@ -27,7 +27,6 @@ public class ControladorEnvio {
     public void Iniciar() {
 
         ven.setTitle("Envios");
-        ven.setLocationRelativeTo(null);
         MostrarDatos();
 
     }

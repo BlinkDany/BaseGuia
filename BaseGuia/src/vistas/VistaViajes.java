@@ -8,7 +8,7 @@ package vistas;
  *
  * @author blink
  */
-public class VistaViajes extends javax.swing.JFrame {
+public class VistaViajes extends javax.swing.JInternalFrame {
 
     /**
      * Creates new form VistaViajes

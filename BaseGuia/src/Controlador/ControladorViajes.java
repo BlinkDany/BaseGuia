@@ -31,7 +31,6 @@ public class ControladorViajes {
     public void Iniciar() {
 
         MostrarDatos();
-        vvia.setLocationRelativeTo(null);
         vvia.setTitle("Viajes");
         vvia.btnRegistrar.addActionListener(l -> Registrar());
         vvia.btnRefresh.addActionListener(l -> MostrarDatos());

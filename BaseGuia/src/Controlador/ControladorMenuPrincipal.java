@@ -74,7 +74,7 @@ public class ControladorMenuPrincipal {
         
         cantones mica = new cantones();
         vistaPrincipal.getDesctopPrincipal().add(vis);
-        Controlador.cantonesControlador controlPro = new cantonesControlador (mod, mp, vis);
+        Controlador.cantonesControlador controlPro = new cantonesControlador (mp, mod, vis);
         controlPro.iniciaControl();
         
 
@@ -97,7 +97,7 @@ public class ControladorMenuPrincipal {
         
         Modelo.ModeloPaquetes mod = new ModeloPaquetes();
              
-        Vista.VistaPaquetes vpa = new Vista.VistaPaquetes();
+        vistas.VistaPaquetes vpa = new vistas.VistaPaquetes();
 
         vistaPrincipal.getDesctopPrincipal().add(vpa);
         

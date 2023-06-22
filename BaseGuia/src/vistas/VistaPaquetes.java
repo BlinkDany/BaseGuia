@@ -8,7 +8,7 @@ package vistas;
  *
  * @author blink
  */
-public class VistaPaquetes extends javax.swing.JFrame {
+public class VistaPaquetes extends javax.swing.JInternalFrame {
 
     /**
      * Creates new form VistaPaquetes
