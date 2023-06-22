@@ -17,14 +17,6 @@ public class VistaConductor extends javax.swing.JFrame {
         initComponents();
     }
 
-    public JScrollPane getjScrollPane1() {
-        return jScrollPane1;
-    }
-
-    public static JTable getJtblconductor() {
-        return jtblconductor;
-    }
-
     public JInternalFrame getJINTFConductores() {
         return JINTFConductores;
     }
@@ -73,6 +65,18 @@ public class VistaConductor extends javax.swing.JFrame {
         return jdcfechaenvioremiten;
     }
 
+    public JTable getJtblDestinatario() {
+        return jtblDestinatario;
+    }
+
+    public JTable getJtblconductor() {
+        return jtblconductor;
+    }
+
+    public JTable getJtblremitente() {
+        return jtblremitente;
+    }
+
     public JSpinner getSpnsalarioconduc() {
         return spnsalarioconduc;
     }
@@ -100,8 +104,6 @@ public class VistaConductor extends javax.swing.JFrame {
     public FSTexFieldMD getTxtidremitente() {
         return txtidremitente;
     }
-
-
     
     /**
      * This method is called from within the constructor to initialize the form.
@@ -146,6 +148,10 @@ public class VistaConductor extends javax.swing.JFrame {
         jLabel13 = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
         jtblconductor = new javax.swing.JTable();
+        jScrollPane2 = new javax.swing.JScrollPane();
+        jtblDestinatario = new javax.swing.JTable();
+        jScrollPane3 = new javax.swing.JScrollPane();
+        jtblremitente = new javax.swing.JTable();
         btnconductor = new javax.swing.JButton();
         btnregresar = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
@@ -197,7 +203,7 @@ public class VistaConductor extends javax.swing.JFrame {
         jPanel6.setLayout(jPanel6Layout);
         jPanel6Layout.setHorizontalGroup(
             jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 0, Short.MAX_VALUE)
+            .addGap(0, 868, Short.MAX_VALUE)
         );
         jPanel6Layout.setVerticalGroup(
             jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -249,7 +255,7 @@ public class VistaConductor extends javax.swing.JFrame {
                 {null, null, null}
             },
             new String [] {
-                "Conductor", "Remitente", "Destinatario"
+                "Conductor", "Cedula", "Salario"
             }
         ) {
             boolean[] canEdit = new boolean [] {
@@ -262,48 +268,55 @@ public class VistaConductor extends javax.swing.JFrame {
         });
         jScrollPane1.setViewportView(jtblconductor);
 
+        jtblDestinatario.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null}
+            },
+            new String [] {
+                "ID Destinatario", "Cedula", "Fecha Entrega"
+            }
+        ) {
+            boolean[] canEdit = new boolean [] {
+                false, false, false
+            };
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
+        jScrollPane2.setViewportView(jtblDestinatario);
+
+        jtblremitente.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null}
+            },
+            new String [] {
+                "ID Remitente", "Cedula", "Fecha Envio"
+            }
+        ) {
+            boolean[] canEdit = new boolean [] {
+                false, false, false
+            };
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
+        jScrollPane3.setViewportView(jtblremitente);
+
         javax.swing.GroupLayout JINTFConductoresLayout = new javax.swing.GroupLayout(JINTFConductores.getContentPane());
         JINTFConductores.getContentPane().setLayout(JINTFConductoresLayout);
         JINTFConductoresLayout.setHorizontalGroup(
             JINTFConductoresLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addGroup(JINTFConductoresLayout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jPanel6, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addContainerGap())
-            .addGroup(JINTFConductoresLayout.createSequentialGroup()
                 .addGroup(JINTFConductoresLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(JINTFConductoresLayout.createSequentialGroup()
-                        .addGroup(JINTFConductoresLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, JINTFConductoresLayout.createSequentialGroup()
-                                .addContainerGap()
-                                .addComponent(jLabel9)
-                                .addGap(38, 38, 38))
-                            .addGroup(JINTFConductoresLayout.createSequentialGroup()
-                                .addGap(50, 50, 50)
-                                .addGroup(JINTFConductoresLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                    .addComponent(btnregistrar)
-                                    .addComponent(jLabel8))
-                                .addGap(18, 18, 18)))
-                        .addGroup(JINTFConductoresLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(JINTFConductoresLayout.createSequentialGroup()
-                                .addGap(25, 25, 25)
-                                .addComponent(btnmodificar)
-                                .addGap(39, 39, 39)
-                                .addComponent(btneliminar)
-                                .addGap(18, 18, 18)
-                                .addComponent(btnlimpiar))
-                            .addGroup(JINTFConductoresLayout.createSequentialGroup()
-                                .addGroup(JINTFConductoresLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(txtiddestinatario, javax.swing.GroupLayout.PREFERRED_SIZE, 154, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(txtceduladestina, javax.swing.GroupLayout.PREFERRED_SIZE, 154, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addGap(62, 62, 62)
-                                .addGroup(JINTFConductoresLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(btnagregardestinatario)
-                                    .addGroup(JINTFConductoresLayout.createSequentialGroup()
-                                        .addComponent(jLabel10)
-                                        .addGap(18, 18, 18)
-                                        .addComponent(jdcfechaentregadestina, javax.swing.GroupLayout.PREFERRED_SIZE, 132, javax.swing.GroupLayout.PREFERRED_SIZE))))))
                     .addGroup(JINTFConductoresLayout.createSequentialGroup()
                         .addGap(18, 18, 18)
                         .addGroup(JINTFConductoresLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
@@ -339,18 +352,62 @@ public class VistaConductor extends javax.swing.JFrame {
                                     .addComponent(jLabel7)
                                     .addGap(18, 18, 18)
                                     .addComponent(jdcfechaenvioremiten, javax.swing.GroupLayout.PREFERRED_SIZE, 160, javax.swing.GroupLayout.PREFERRED_SIZE)))))
+                    .addGroup(JINTFConductoresLayout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(jPanel6, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addGroup(JINTFConductoresLayout.createSequentialGroup()
+                        .addGroup(JINTFConductoresLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, JINTFConductoresLayout.createSequentialGroup()
+                                .addContainerGap()
+                                .addComponent(jLabel9)
+                                .addGap(38, 38, 38))
+                            .addGroup(JINTFConductoresLayout.createSequentialGroup()
+                                .addGap(50, 50, 50)
+                                .addGroup(JINTFConductoresLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                    .addComponent(btnregistrar)
+                                    .addComponent(jLabel8))
+                                .addGap(18, 18, 18)))
+                        .addGroup(JINTFConductoresLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(JINTFConductoresLayout.createSequentialGroup()
+                                .addGap(19, 19, 19)
+                                .addComponent(btnmodificar)
+                                .addGap(45, 45, 45)
+                                .addComponent(btneliminar)
+                                .addGap(18, 18, 18)
+                                .addComponent(btnlimpiar))
+                            .addGroup(JINTFConductoresLayout.createSequentialGroup()
+                                .addGroup(JINTFConductoresLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(txtiddestinatario, javax.swing.GroupLayout.PREFERRED_SIZE, 154, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(txtceduladestina, javax.swing.GroupLayout.PREFERRED_SIZE, 154, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addGap(62, 62, 62)
+                                .addGroup(JINTFConductoresLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(btnagregardestinatario)
+                                    .addGroup(JINTFConductoresLayout.createSequentialGroup()
+                                        .addComponent(jLabel10)
+                                        .addGap(18, 18, 18)
+                                        .addComponent(jdcfechaentregadestina, javax.swing.GroupLayout.PREFERRED_SIZE, 132, javax.swing.GroupLayout.PREFERRED_SIZE))))))
                     .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 868, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(JINTFConductoresLayout.createSequentialGroup()
                         .addGap(346, 346, 346)
                         .addComponent(jLabel13)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 93, Short.MAX_VALUE)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(63, 63, 63))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 24, Short.MAX_VALUE)
+                .addGroup(JINTFConductoresLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, JINTFConductoresLayout.createSequentialGroup()
+                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 481, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(97, 97, 97))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, JINTFConductoresLayout.createSequentialGroup()
+                        .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(109, 109, 109))))
             .addGroup(JINTFConductoresLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(JINTFConductoresLayout.createSequentialGroup()
                     .addGap(155, 155, 155)
                     .addComponent(jLabel12)
                     .addContainerGap(1227, Short.MAX_VALUE)))
+            .addGroup(JINTFConductoresLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, JINTFConductoresLayout.createSequentialGroup()
+                    .addContainerGap(908, Short.MAX_VALUE)
+                    .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGap(116, 116, 116)))
         );
         JINTFConductoresLayout.setVerticalGroup(
             JINTFConductoresLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -358,42 +415,22 @@ public class VistaConductor extends javax.swing.JFrame {
                 .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGroup(JINTFConductoresLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(JINTFConductoresLayout.createSequentialGroup()
+                        .addGap(61, 61, 61)
+                        .addGroup(JINTFConductoresLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel2)
+                            .addComponent(txtidconductor, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(33, 33, 33)
+                        .addGroup(JINTFConductoresLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(txtcedconductor, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel3)
+                            .addComponent(btnagregarconduc))
+                        .addGap(18, 18, 18)
                         .addGroup(JINTFConductoresLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(JINTFConductoresLayout.createSequentialGroup()
-                                .addGap(61, 61, 61)
-                                .addGroup(JINTFConductoresLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                    .addComponent(jLabel2)
-                                    .addComponent(txtidconductor, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addGap(33, 33, 33)
-                                .addGroup(JINTFConductoresLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                    .addComponent(txtcedconductor, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(jLabel3)
-                                    .addComponent(btnagregarconduc))
-                                .addGap(18, 18, 18)
-                                .addGroup(JINTFConductoresLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                    .addComponent(jLabel4)
-                                    .addComponent(spnsalarioconduc, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                            .addGroup(JINTFConductoresLayout.createSequentialGroup()
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(jLabel11)
-                                .addGap(21, 21, 21)
-                                .addGroup(JINTFConductoresLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                    .addComponent(jLabel5)
-                                    .addComponent(txtidremitente, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addGap(36, 36, 36)
-                                .addGroup(JINTFConductoresLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jLabel6)
-                                    .addGroup(JINTFConductoresLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                        .addComponent(txtcedularemiten, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addComponent(btnagregarremi)))
-                                .addGap(11, 11, 11)
-                                .addGroup(JINTFConductoresLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addGroup(JINTFConductoresLayout.createSequentialGroup()
-                                        .addGap(23, 23, 23)
-                                        .addComponent(jLabel7))
-                                    .addGroup(JINTFConductoresLayout.createSequentialGroup()
-                                        .addGap(31, 31, 31)
-                                        .addComponent(jdcfechaenvioremiten, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))))
+                            .addGroup(JINTFConductoresLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                .addComponent(jLabel4)
+                                .addComponent(spnsalarioconduc, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(jLabel7))
+                            .addComponent(jdcfechaenvioremiten, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 11, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGroup(JINTFConductoresLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -410,28 +447,49 @@ public class VistaConductor extends javax.swing.JFrame {
                                     .addComponent(txtceduladestina, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addComponent(jLabel9)
                                     .addComponent(btnagregardestinatario))
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 57, Short.MAX_VALUE))
+                                .addGap(18, 18, 18)
+                                .addGroup(JINTFConductoresLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                    .addComponent(btnmodificar)
+                                    .addComponent(btnregistrar)
+                                    .addComponent(btneliminar)
+                                    .addComponent(btnlimpiar)))
                             .addGroup(JINTFConductoresLayout.createSequentialGroup()
                                 .addGap(46, 46, 46)
-                                .addComponent(jdcfechaentregadestina, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addGroup(JINTFConductoresLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                    .addComponent(btnregistrar)
-                                    .addComponent(btnmodificar)
-                                    .addComponent(btneliminar)
-                                    .addComponent(btnlimpiar))
-                                .addGap(26, 26, 26))))
+                                .addComponent(jdcfechaentregadestina, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 7, Short.MAX_VALUE)
+                        .addComponent(jPanel6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addContainerGap())
                     .addGroup(JINTFConductoresLayout.createSequentialGroup()
-                        .addGap(12, 12, 12)
-                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
-                .addComponent(jPanel6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap())
+                        .addGroup(JINTFConductoresLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(JINTFConductoresLayout.createSequentialGroup()
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(jLabel11)
+                                .addGap(21, 21, 21)
+                                .addGroup(JINTFConductoresLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                    .addComponent(jLabel5)
+                                    .addComponent(txtidremitente, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addGroup(JINTFConductoresLayout.createSequentialGroup()
+                                .addGap(12, 12, 12)
+                                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 113, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGap(8, 8, 8)
+                        .addGroup(JINTFConductoresLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel6)
+                            .addGroup(JINTFConductoresLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                .addComponent(txtcedularemiten, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(btnagregarremi)))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 129, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(33, 33, 33))))
             .addGroup(JINTFConductoresLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(JINTFConductoresLayout.createSequentialGroup()
                     .addGap(46, 46, 46)
                     .addComponent(jLabel12)
-                    .addContainerGap(456, Short.MAX_VALUE)))
+                    .addContainerGap(425, Short.MAX_VALUE)))
+            .addGroup(JINTFConductoresLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(JINTFConductoresLayout.createSequentialGroup()
+                    .addGap(187, 187, 187)
+                    .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 129, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addContainerGap(177, Short.MAX_VALUE)))
         );
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -574,10 +632,14 @@ public class VistaConductor extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel6;
     private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JScrollPane jScrollPane2;
+    private javax.swing.JScrollPane jScrollPane3;
     private javax.swing.JSeparator jSeparator1;
     private com.toedter.calendar.JDateChooser jdcfechaentregadestina;
     private com.toedter.calendar.JDateChooser jdcfechaenvioremiten;
+    private javax.swing.JTable jtblDestinatario;
     public static javax.swing.JTable jtblconductor;
+    private javax.swing.JTable jtblremitente;
     private javax.swing.JSpinner spnsalarioconduc;
     private LIB.FSTexFieldMD txtcedconductor;
     private LIB.FSTexFieldMD txtceduladestina;
