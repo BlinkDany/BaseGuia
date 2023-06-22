@@ -6,6 +6,8 @@ package Controlador;
 
 import Modelo.ModeloViajes;
 import Modelo.Viajes;
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
 import java.util.List;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
@@ -16,6 +18,7 @@ import vistas.VistaViajes;
  * @author blink
  */
 public class ControladorViajes {
+
     ModeloViajes mvi;
     VistaViajes vvia;
 
@@ -34,6 +37,25 @@ public class ControladorViajes {
         vvia.setTitle("Viajes");
         vvia.btnRegistrar.addActionListener(l -> Registrar());
         vvia.btnRefresh.addActionListener(l -> MostrarDatos());
+        vvia.lblBuscar.addMouseListener(new MouseAdapter() {
+            @Override
+            public void mouseClicked(MouseEvent e) {
+
+                if (vvia.txtBuscar.getText().isEmpty()) {
+                    MessageError("Ingrese un valor");
+                } else {
+                    
+                    Buscar();
+                }
+            }
+        });
+        vvia.tblViajes.addMouseListener(new MouseAdapter() {
+            @Override
+            public void mouseClicked(MouseEvent e) {
+
+                LlenarDatos();
+            }
+        });
     }
 
     public void Registrar() {
@@ -75,6 +97,40 @@ public class ControladorViajes {
 
             Object datos[] = {p.getCodviajes(), p.getFecha(), p.getIdConductor(), p.getMatriculaCamion()};
             modelo.addRow(datos);
+        });
+
+    }
+    
+    public void LlenarDatos(){
+        
+        List<Viajes> listv = mvi.ListaViajes();
+
+        listv.stream().forEach(p -> {
+
+            if (p.getCodviajes() == Integer.valueOf(vvia.tblViajes.getValueAt(vvia.tblViajes.getSelectedRow(), 0).hashCode())) {
+
+                vvia.txtCod.setText(String.valueOf(p.getCodviajes()));
+                vvia.txtDate.setDate(p.getFecha());
+                vvia.txtIdConductor.setText(String.valueOf(p.getIdConductor()));
+                vvia.txtMatricula.setText(String.valueOf(p.getMatriculaCamion()));
+            }
+        });
+        
+    }
+
+    public void Buscar() {
+
+        DefaultTableModel modelo = (DefaultTableModel) vvia.tblViajes.getModel();
+        modelo.setNumRows(0);
+        List<Viajes> listv = mvi.ListaViajes();
+
+        listv.stream().forEach(p -> {
+
+            if (p.getCodviajes() == Integer.valueOf(vvia.txtBuscar.getText())) {
+
+                Object datos[] = {p.getCodviajes(), p.getFecha(), p.getIdConductor(), p.getMatriculaCamion()};
+                modelo.addRow(datos);
+            }
         });
 
     }

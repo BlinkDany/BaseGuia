@@ -59,9 +59,9 @@ public class provinciaModelo extends provincia{
 
     public boolean insertarProvincia() {
 
-        String sql = "INSERT INTO public.Provincia(\n"
-                + "	codProvincia, nombre)\n"
-                + "	VALUES ('" + getCodProvincia()+ "','" + getNombreProvincia() + "');";
+        String sql = "INSERT INTO Provincia( "
+                + "	CODPROVINCIA, NOMBRE) "
+                + "	VALUES (" + getCodProvincia()+ ",'" + getNombreProvincia() + "');";
 
         return con.CRUD(sql);
 

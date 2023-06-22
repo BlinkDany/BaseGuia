@@ -223,6 +223,7 @@ public class VistaCamion extends javax.swing.JInternalFrame {
         txtBuscar = new javax.swing.JTextField();
         btnCrear = new javax.swing.JButton();
         btnSalir = new javax.swing.JButton();
+        btnRfresh = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
 
         jPanel4.setBackground(new java.awt.Color(255, 255, 255));
@@ -426,6 +427,8 @@ public class VistaCamion extends javax.swing.JInternalFrame {
             }
         });
 
+        btnRfresh.setIcon(new javax.swing.ImageIcon(getClass().getResource("/vistas/Iconos/loop.png"))); // NOI18N
+
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
         jPanel2Layout.setHorizontalGroup(
@@ -435,7 +438,9 @@ public class VistaCamion extends javax.swing.JInternalFrame {
                 .addComponent(lblBuscar)
                 .addGap(18, 18, 18)
                 .addComponent(txtBuscar, javax.swing.GroupLayout.PREFERRED_SIZE, 208, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(255, 255, 255)
+                .addGap(182, 182, 182)
+                .addComponent(btnRfresh)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(btnCrear, javax.swing.GroupLayout.PREFERRED_SIZE, 107, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(btnSalir, javax.swing.GroupLayout.DEFAULT_SIZE, 103, Short.MAX_VALUE))
@@ -444,12 +449,14 @@ public class VistaCamion extends javax.swing.JInternalFrame {
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(lblBuscar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(txtBuscar, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(btnCrear)
-                        .addComponent(btnSalir)))
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(btnRfresh, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                        .addComponent(lblBuscar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(txtBuscar, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(btnCrear)
+                            .addComponent(btnSalir))))
                 .addContainerGap())
         );
 
@@ -596,6 +603,7 @@ public class VistaCamion extends javax.swing.JInternalFrame {
     private javax.swing.JButton btnCrear;
     private javax.swing.JButton btnGuardar1;
     private javax.swing.JButton btnLimpiar1;
+    public static javax.swing.JButton btnRfresh;
     private javax.swing.JButton btnSalir;
     private javax.swing.JButton btnSalirdlg;
     private javax.swing.JDialog dlg;

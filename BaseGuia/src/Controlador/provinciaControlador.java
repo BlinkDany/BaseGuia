@@ -51,11 +51,11 @@ public class provinciaControlador {
 
         // Asociación de acciones a los botones
         vista.getBtnLimpiar().addActionListener(l -> limpiar());
+        vista.btnRfresh.addActionListener(l -> mostrarDatosTabla());
         vista.getLblBuscar().addMouseListener(new MouseAdapter() {
             @Override
             public void mouseClicked(MouseEvent e) {
-                buscarProvincia();
-                limpiaBusca();
+                Buscar();
             }
 
         });
@@ -108,8 +108,11 @@ public class provinciaControlador {
         if (vista.getDlg().getTitle().equals("Crear")) {
 
             vista.getBtnGuardar().setText("Registrar");
-            limpiar();
             vista.getTxtCodProvincia().setEnabled(true);
+            if (modelo.insertarProvincia()) {
+                JOptionPane.showMessageDialog(null, "Se ha registrado");
+            }
+            limpiar();
         }
         vista.getDlg().setVisible(true);
     }
@@ -227,6 +230,26 @@ public class provinciaControlador {
                     // Agregar cada objeto "datos" como una nueva fila al modelo de la tabla
                     .forEach(tabla::addRow);
         }
+    }
+    
+    public void Buscar(){
+        
+        DefaultTableModel tabla = (DefaultTableModel) vista.getTblProvincias().getModel();
+            // Limpiar el modelo de datos de la tabla
+            tabla.setNumRows(0);
+
+            // Obtener la lista de productos
+            List<provincia> listpro = modelo.listarProvincia();
+
+            // Utilizar un stream para procesar la lista de productos
+            listpro.stream().forEach(p -> {
+            
+                if (p.getCodProvincia() == Integer.valueOf(vista.getTxtBuscar().getText())) {
+                    Object[] datos = {p.getCodProvincia(), p.getNombreProvincia()};
+                    tabla.addRow(datos);
+                }
+            });
+        
     }
 
     public void limpiar() {

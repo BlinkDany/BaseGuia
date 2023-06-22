@@ -188,6 +188,7 @@ public class VistaCantones extends javax.swing.JInternalFrame {
         jPanel2 = new javax.swing.JPanel();
         btnSalir = new javax.swing.JButton();
         btnAgregar = new javax.swing.JButton();
+        btnRfresh = new javax.swing.JButton();
         txtBuscarProvincia = new javax.swing.JTextField();
         lblBuscaProvincia = new javax.swing.JLabel();
         jScrollPane2 = new javax.swing.JScrollPane();
@@ -355,12 +356,16 @@ public class VistaCantones extends javax.swing.JInternalFrame {
             }
         });
 
+        btnRfresh.setIcon(new javax.swing.ImageIcon(getClass().getResource("/vistas/Iconos/loop.png"))); // NOI18N
+
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
         jPanel2Layout.setHorizontalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
-                .addGap(426, 426, 426)
+                .addGap(353, 353, 353)
+                .addComponent(btnRfresh)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(btnAgregar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGap(18, 18, 18)
                 .addComponent(btnSalir, javax.swing.GroupLayout.DEFAULT_SIZE, 103, Short.MAX_VALUE)
@@ -370,9 +375,11 @@ public class VistaCantones extends javax.swing.JInternalFrame {
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(btnSalir)
-                    .addComponent(btnAgregar))
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(btnRfresh, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(btnSalir)
+                        .addComponent(btnAgregar)))
                 .addContainerGap())
         );
 
@@ -579,6 +586,7 @@ public class VistaCantones extends javax.swing.JInternalFrame {
     private javax.swing.JButton btnAgregar;
     private javax.swing.JButton btnGuardar;
     private javax.swing.JButton btnLimpiar;
+    public static javax.swing.JButton btnRfresh;
     private javax.swing.JButton btnSalir;
     private javax.swing.JButton btnSalirDlg;
     private javax.swing.JDialog dlg;

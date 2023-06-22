@@ -1,4 +1,3 @@
-
 package Controlador;
 
 import Modelo.Camiones;
@@ -26,18 +25,17 @@ import vistas.VistaConductor;
  * @author tatip
  */
 public class camionesControlador {
-    
-   
+
     camionModelo camionModelo;
     VistaCamion VistaCamion;
     VistaCantones vistacanton;
     VistaConductor visconduc;
-   
-   public camionesControlador(){
-       
-   }
-   
-    public camionesControlador(camionModelo modeloCamion, VistaCamion  vista) {
+
+    public camionesControlador() {
+
+    }
+
+    public camionesControlador(camionModelo modeloCamion, VistaCamion vista) {
 
         this.camionModelo = modeloCamion;
 
@@ -46,7 +44,7 @@ public class camionesControlador {
         vista.setVisible(true);
 
     }
-    
+
     public void iniciaControl() {
         // Configuración inicial de la vista
         VistaCamion.setTitle("Camiones");
@@ -62,14 +60,15 @@ public class camionesControlador {
         // Asociación de   los botones
 
         VistaCamion.getBtnLimpiar1().addActionListener(l -> limpiarDlg());
+        VistaCamion.btnRfresh.addActionListener(l -> mostrarDatosTablaCamion());
         VistaCamion.getLblBuscar().addMouseListener(new MouseAdapter() {
             @Override
             public void mouseClicked(MouseEvent e) {
-                buscarCamion();
+                Buscar();
             }
 
         });
-        
+
         VistaCamion.getLblBuscar().addMouseListener(new MouseAdapter() {
 
             @Override
@@ -77,69 +76,65 @@ public class camionesControlador {
 
                 buscarCamion();
                 actualizaLimpia();
-                
+
             }
 
         });
-        
-        
-         VistaCamion.getTxtBuscar().addMouseListener(new MouseAdapter() {
+
+        VistaCamion.getTxtBuscar().addMouseListener(new MouseAdapter() {
             @Override
-            
+
             public void mouseClicked(MouseEvent e) {
-               VistaCamion.getTxtBuscar().setText("");
+                VistaCamion.getTxtBuscar().setText("");
             }
-            
+
         });
-         
-         VistaCamion.getTxtCodProvincia2().addMouseListener(new MouseAdapter() {
+
+        VistaCamion.getTxtCodProvincia2().addMouseListener(new MouseAdapter() {
             @Override
-            
+
             public void mouseClicked(MouseEvent e) {
-               VistaCamion.getTxtCodProvincia2().setText("");
+                VistaCamion.getTxtCodProvincia2().setText("");
             }
-            
+
         });
-         
-          VistaCamion.getTxtMarca().addMouseListener(new MouseAdapter() {
+
+        VistaCamion.getTxtMarca().addMouseListener(new MouseAdapter() {
             @Override
-            
+
             public void mouseClicked(MouseEvent e) {
-               VistaCamion.getTxtMarca().setText("");
+                VistaCamion.getTxtMarca().setText("");
             }
-            
+
         });
-          
-          VistaCamion.getTxtMatricula().addMouseListener(new MouseAdapter() {
+
+        VistaCamion.getTxtMatricula().addMouseListener(new MouseAdapter() {
             @Override
-            
+
             public void mouseClicked(MouseEvent e) {
-               VistaCamion.getTxtMatricula().setText("");
+                VistaCamion.getTxtMatricula().setText("");
             }
-            
+
         });
-          
-          
-          VistaCamion.getTxtModelo().addMouseListener(new MouseAdapter() {
+
+        VistaCamion.getTxtModelo().addMouseListener(new MouseAdapter() {
             @Override
-            
+
             public void mouseClicked(MouseEvent e) {
-               VistaCamion.getTxtModelo().setText("");
+                VistaCamion.getTxtModelo().setText("");
             }
-            
+
         });
-          
-          
-          VistaCamion.getTxtPotencia().addMouseListener(new MouseAdapter() {
+
+        VistaCamion.getTxtPotencia().addMouseListener(new MouseAdapter() {
             @Override
-            
+
             public void mouseClicked(MouseEvent e) {
-               VistaCamion.getTxtPotencia().setText("");
+                VistaCamion.getTxtPotencia().setText("");
             }
-            
+
         });
-          
-        
+
         VistaCamion.getBtnSalirdlg().addActionListener(l -> cerrarDialogo());
         VistaCamion.getBtnSalir().addActionListener(l -> VistaCamion.dispose());
         VistaCamion.getBtnCrear().addActionListener(l -> abrirDialogo("Crear"));
@@ -147,9 +142,6 @@ public class camionesControlador {
         VistaCamion.getBtnGuardar1().addActionListener(l -> crearCamion());
 
         VistaCamion.getBtnLimpiar1().addActionListener(l -> actualizaLimpia());
-
-        
-        
 
         VistaCamion.getTblCamion().getSelectionModel().addListSelectionListener(e -> {
             // Verifica si hay alguna fila seleccionada
@@ -174,10 +166,9 @@ public class camionesControlador {
         VistaCamion.getTxtBuscar().setText("");
 
         mostrarDatosTablaCamion();
-        
+
     }
-    
-   
+
     private void abrirDialogo(String ce) {
 
         VistaCamion.getDlg().setLocationRelativeTo(VistaCamion);
@@ -185,8 +176,6 @@ public class camionesControlador {
         VistaCamion.getDlg().setTitle(ce);
 
         if (VistaCamion.getDlg().getTitle().equals("Crear")) {
-            
-            
 
             if (VistaCamion.getTblCamion().getSelectedRow() == -1 || VistaCamion.getTblCamion().getSelectedRow() == -1) {
 
@@ -196,14 +185,11 @@ public class camionesControlador {
                 limpiarDlg();
                 llenarCamposDeTextoCamion();
                 VistaCamion.getDlg().setVisible(true);
-           
-                
+
                 mostrarDatosTablaCamion();
             }
         }
     }
-
-   
 
     private void crearCamion() {
         String title = VistaCamion.getDlg().getTitle();
@@ -217,23 +203,16 @@ public class camionesControlador {
             } else {
 
                 camionModelo.setMatricula((VistaCamion.getTxtMatricula().getText()));
-               
 
                 if (camionModelo.Validar()) {
 
-                 
                     camionModelo.setMarca(VistaCamion.getTxtMarca().getText());
                     camionModelo.setModelo((VistaCamion.getTxtModelo().getText()));
                     camionModelo.setPotencia((VistaCamion.getTxtPotencia().getText()));
-             
-            
-                   
-           
 
                     if (camionModelo.insertarCamion()) {
-                        
+
                         mostrarDatosTablaCamion();
-                        
 
                     } else {
                         JOptionPane.showMessageDialog(null, "Error al guardar la información",
@@ -251,41 +230,38 @@ public class camionesControlador {
 
     }
 
-
     public boolean camposVacios() {
         return VistaCamion.getTxtMarca().getText().isEmpty()
                 || VistaCamion.getTxtMatricula().getText().isEmpty()
                 || VistaCamion.getTxtPotencia().getText().isEmpty()
                 || VistaCamion.getTxtModelo().getText().isEmpty();
-              
-    }
 
- 
+    }
 
     public void mostrarDatosTablaCamion() {
-    DefaultTableModel tabla = (DefaultTableModel) VistaCamion.getTblCamion().getModel();
-    tabla.setRowCount(0);
+        DefaultTableModel tabla = (DefaultTableModel) VistaCamion.getTblCamion().getModel();
+        tabla.setRowCount(0);
 
-    List<Camiones> listca = camionModelo.listarCamion();
+        List<Camiones> listca = camionModelo.listarCamion();
 
-    // Crear un objeto de renderizado de celda personalizado
-    DefaultTableCellRenderer cellRenderer = new DefaultTableCellRenderer();
-    cellRenderer.setPreferredSize(new Dimension(150, 100)); // Establecer tamaño personalizado para las celdas
+        // Crear un objeto de renderizado de celda personalizado
+        DefaultTableCellRenderer cellRenderer = new DefaultTableCellRenderer();
+        cellRenderer.setPreferredSize(new Dimension(150, 100)); // Establecer tamaño personalizado para las celdas
 
-    // Establecer el objeto de renderizado de celda personalizado para todas las columnas de la tabla
-    for (int i = 0; i < VistaCamion.getTblCamion().getColumnCount(); i++) {
-        VistaCamion.getTblCamion().getColumnModel().getColumn(i).setCellRenderer(cellRenderer);
+        // Establecer el objeto de renderizado de celda personalizado para todas las columnas de la tabla
+        for (int i = 0; i < VistaCamion.getTblCamion().getColumnCount(); i++) {
+            VistaCamion.getTblCamion().getColumnModel().getColumn(i).setCellRenderer(cellRenderer);
+        }
+
+        // Recorrer la lista de productos
+        listca.forEach(p -> {
+            // Crear un objeto datos con los valores de los campos correspondientes del producto
+            Object[] datos = {p.getMatricula(), p.getMarca(), p.getModelo(), p.getPotencia()};
+
+            // Agregar el objeto como una nueva fila a la tabla
+            tabla.addRow(datos);
+        });
     }
-
-    // Recorrer la lista de productos
-    listca.forEach(p -> {
-        // Crear un objeto datos con los valores de los campos correspondientes del producto
-        Object[] datos = {p.getMatricula(), p.getMarca(), p.getModelo(), p.getPotencia()};
-
-        // Agregar el objeto como una nueva fila a la tabla
-        tabla.addRow(datos);
-    });
-}
 
     public void llenarCamposDeTextoCamion() {
         // Borrar los datos existentes en los campos de texto
@@ -304,9 +280,22 @@ public class camionesControlador {
         });
     }
 
-    
+    public void Buscar(){
+        
+        DefaultTableModel tabla = (DefaultTableModel) VistaCamion.getTblCamion().getModel();
+        tabla.setRowCount(0);
 
-   
+        List<Camiones> listca = camionModelo.listarCamion();
+        listca.stream().forEach(p -> {
+        
+            if (p.getMatricula().equals(VistaCamion.getTxtBuscar().getText())) {
+                Object datos [] = {p.getMatricula(), p.getMarca(), p .getModelo(), p.getPotencia()};
+                tabla.addRow(datos);
+            }
+        });
+        
+    }
+    
     public void limpiarDlg() {
 
         VistaCamion.getTxtBuscar().setText("");
@@ -316,11 +305,9 @@ public class camionesControlador {
         VistaCamion.getTxtMatricula().setText("");
         VistaCamion.getTxtModelo().setText("");
         VistaCamion.getTxtPotencia().setText("");
-        
 
     }
 
-   
     public void buscarCamion() {
         // Obtener la cédula ingresada en el campo de búsqueda
         String placa = VistaCamion.getTxtBuscar().getText();
@@ -341,22 +328,15 @@ public class camionesControlador {
             // Utilizar un stream para procesar la lista 
             listf.stream()
                     // Filtrar 
-                    .filter(p -> placa .equals(p.getMatricula()))
+                    .filter(p -> placa.equals(p.getMatricula()))
                     // Mapear cada persona filtrada a un objeto "datos" que contiene los valores deseados
                     .map(p -> {
 
                         Object[] datos = {p.getMatricula(), p.getMarca(), p.getModelo(), p.getPotencia()};
                         return datos;
                     })
-                 
                     .forEach(tabla::addRow);
         }
     }
 
-    
 }
-
-
-
-  
- 
