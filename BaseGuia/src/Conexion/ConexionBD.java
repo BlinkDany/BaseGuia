@@ -55,7 +55,7 @@ public class ConexionBD {
         }
     }
 
-    public PreparedStatement Creae(String sql) {
+    public PreparedStatement crear(String sql) {
         PreparedStatement ps = null;
         try {
             ps = con.prepareStatement(sql);
