@@ -108,13 +108,6 @@ public class VistaCamion extends javax.swing.JFrame {
         this.jPanel2 = jPanel2;
     }
 
-    public JPanel getjPanel3() {
-        return jPanel3;
-    }
-
-    public void setjPanel3(JPanel jPanel3) {
-        this.jPanel3 = jPanel3;
-    }
 
     public JPanel getjPanel4() {
         return jPanel4;
@@ -140,69 +133,6 @@ public class VistaCamion extends javax.swing.JFrame {
         this.lblBuscar = lblBuscar;
     }
 
-    public JLabel getLblCanton() {
-        return lblCanton;
-    }
-
-    public void setLblCanton(JLabel lblCanton) {
-        this.lblCanton = lblCanton;
-    }
-
-    public JLabel getLblConductor() {
-        return lblConductor;
-    }
-
-    public void setLblConductor(JLabel lblConductor) {
-        this.lblConductor = lblConductor;
-    }
-
-    public JLabel getLblDestinario() {
-        return lblDestinario;
-    }
-
-    public void setLblDestinario(JLabel lblDestinario) {
-        this.lblDestinario = lblDestinario;
-    }
-
-    public JLabel getLblEnvios() {
-        return lblEnvios;
-    }
-
-    public void setLblEnvios(JLabel lblEnvios) {
-        this.lblEnvios = lblEnvios;
-    }
-
-    public JLabel getLblPaquete() {
-        return lblPaquete;
-    }
-
-    public void setLblPaquete(JLabel lblPaquete) {
-        this.lblPaquete = lblPaquete;
-    }
-
-    public JLabel getLblProvincia() {
-        return lblProvincia;
-    }
-
-    public void setLblProvincia(JLabel lblProvincia) {
-        this.lblProvincia = lblProvincia;
-    }
-
-    public JLabel getLblRemitente() {
-        return lblRemitente;
-    }
-
-    public void setLblRemitente(JLabel lblRemitente) {
-        this.lblRemitente = lblRemitente;
-    }
-
-    public JLabel getLblViajes() {
-        return lblViajes;
-    }
-
-    public void setLblViajes(JLabel lblViajes) {
-        this.lblViajes = lblViajes;
-    }
 
     public JTable getTblCamion() {
         return tblCamion;

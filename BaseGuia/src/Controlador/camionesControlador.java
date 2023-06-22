@@ -18,6 +18,8 @@ import javax.swing.table.DefaultTableCellRenderer;
 import javax.swing.table.DefaultTableModel;
 import javax.swing.table.TableRowSorter;
 import vistas.VistaCamion;
+import vistas.VistaCantones;
+import vistas.VistaConductor;
 
 /**
  *
@@ -28,6 +30,8 @@ public class camionesControlador {
    
     camionModelo camionModelo;
     VistaCamion VistaCamion;
+    VistaCantones vistacanton;
+    VistaConductor visconduc;
    
    public camionesControlador(){
        
@@ -65,6 +69,19 @@ public class camionesControlador {
             }
 
         });
+        
+        VistaCamion.getLblBuscar().addMouseListener(new MouseAdapter() {
+
+            @Override
+            public void mouseClicked(MouseEvent e) {
+
+                buscarCamion();
+                actualizaLimpia();
+                
+            }
+
+        });
+        
         
          VistaCamion.getTxtBuscar().addMouseListener(new MouseAdapter() {
             @Override
@@ -159,7 +176,8 @@ public class camionesControlador {
         mostrarDatosTablaCamion();
         
     }
-
+    
+   
     private void abrirDialogo(String ce) {
 
         VistaCamion.getDlg().setLocationRelativeTo(VistaCamion);

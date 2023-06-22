@@ -104,69 +104,7 @@ public class VistaCantones extends javax.swing.JFrame {
         this.lblBuscaProvincia = lblBuscar1;
     }
 
-    public JLabel getLblCamion() {
-        return lblCamion;
-    }
-
-    public void setLblCamion(JLabel lblCamion) {
-        this.lblCamion = lblCamion;
-    }
-
-    public JLabel getLblConductor() {
-        return lblConductor;
-    }
-
-    public void setLblConductor(JLabel lblConductor) {
-        this.lblConductor = lblConductor;
-    }
-
-    public JLabel getLblDestinario() {
-        return lblDestinario;
-    }
-
-    public void setLblDestinario(JLabel lblDestinario) {
-        this.lblDestinario = lblDestinario;
-    }
-
-    public JLabel getLblEnvios() {
-        return lblEnvios;
-    }
-
-    public void setLblEnvios(JLabel lblEnvios) {
-        this.lblEnvios = lblEnvios;
-    }
-
-    public JLabel getLblPaquete() {
-        return lblPaquete;
-    }
-
-    public void setLblPaquete(JLabel lblPaquete) {
-        this.lblPaquete = lblPaquete;
-    }
-
-    public JLabel getLblProvincia() {
-        return lblProvincia;
-    }
-
-    public void setLblProvincia(JLabel lblProvincia) {
-        this.lblProvincia = lblProvincia;
-    }
-
-    public JLabel getLblRemitente() {
-        return lblRemitente;
-    }
-
-    public void setLblRemitente(JLabel lblRemitente) {
-        this.lblRemitente = lblRemitente;
-    }
-
-    public JLabel getLblViajes() {
-        return lblViajes;
-    }
-
-    public void setLblViajes(JLabel lblViajes) {
-        this.lblViajes = lblViajes;
-    }
+   
 
     public JTable getTblCantones() {
         return tblCantones;
