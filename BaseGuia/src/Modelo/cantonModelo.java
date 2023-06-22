@@ -41,9 +41,9 @@ public class cantonModelo extends  cantones{
 
                 cantones miCan = new cantones();
 
-                miCan.setCodCantonPk(rs.getInt("codCanton"));
-                miCan.setCodProvinciaFk(rs.getInt("codProvincia"));
-                miCan.setNombreCanton(rs.getString("nombreCanton"));
+                miCan.setCodCantonPk(rs.getInt("CODCANTON"));
+                miCan.setCodProvinciaFk(rs.getInt("CODPROV"));
+                miCan.setNombreCanton(rs.getString("NOMBRE"));
                           
                 listaCanton.add(miCan);
 
