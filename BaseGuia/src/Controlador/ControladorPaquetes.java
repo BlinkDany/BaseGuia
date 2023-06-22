@@ -1,8 +1,10 @@
 package Controlador;
 
+import Conexion.ConexionBD;
 import Modelo.ModeloPaquetes;
 import Modelo.Paquetes;
-import Vista.VistaPaquetes;
+import java.sql.Connection;
+import vistas.VistaPaquetes;
 import java.util.List;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
@@ -27,19 +29,11 @@ public class ControladorPaquetes {
         vpa.setTitle("Paquetes");
         vpa.setLocationRelativeTo(null);
         vpa.btnRegistrar.addActionListener(l -> RegistrarPaquete());
-        //vpa.btnGuardar.addActionListener(l -> IniciarDialog());
+        vpa.btnRfresh.addActionListener(l -> MostrarDatos());
     }
 
-//    public void IniciarDialog() {
-//
-//        vpa.dialog.setVisible(true);
-//        vpa.dialog.setSize(519, 389);
-//        vpa.dialog.setLocationRelativeTo(vpa);
-//        vpa.dialog.setTitle("Registro de Paquetes");
-//    }
-
     public void RegistrarPaquete() {
-
+        
         if (vpa.txtCod.getText().isEmpty() || vpa.txtCanton.getText().isEmpty() || vpa.txtDescripcion.getText().isEmpty() || vpa.txtDestinatario.getText().isEmpty()
                 || vpa.txtDireccion.getText().isEmpty() || vpa.txtPeso.getText().isEmpty() || vpa.txtPrecio.getText().isEmpty() || vpa.txtRemitente.getText().isEmpty()) {
             
@@ -50,6 +44,7 @@ public class ControladorPaquetes {
             
             if (mpa.ValidarCodigo()) {
                 
+                mpa.setCodPaquete(Integer.parseInt(vpa.txtCod.getText()));
                 mpa.setCodCanton(Integer.valueOf(vpa.txtCanton.getText()));
                 mpa.setDescripcion(vpa.txtDescripcion.getText());
                 mpa.setDireccion(vpa.txtDireccion.getText());
@@ -58,7 +53,7 @@ public class ControladorPaquetes {
                 mpa.setPeso(Double.valueOf(vpa.txtPeso.getText()));
                 mpa.setPrecio(Double.valueOf(vpa.txtPrecio.getText()));
                 
-                if (mpa.Registrar()) {
+                if (mpa.Regi()) {
                     
                     MessageOk("Se ha registrado con exito");
                     MostrarDatos();

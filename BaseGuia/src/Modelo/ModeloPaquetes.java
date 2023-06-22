@@ -1,6 +1,7 @@
 package Modelo;
 
 import Conexion.ConexionBD;
+import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -13,27 +14,62 @@ public class ModeloPaquetes extends Paquetes{
     
     ConexionBD con = new ConexionBD();
 
-    public boolean Registrar() {
+    public boolean Registrar(Connection con2) {
 
+        PreparedStatement prt = null;
         String sql = "INSERT INTO PAQUETES (codigopaquete, descripcion, direccion, peso, precio, idremitente, iddestinatario, codcanton) "
                 + "VALUES (?, ?, ?, ?, ?, ?, ?, ?)";
         try {
-            PreparedStatement stmt = con.crear(sql);
-            stmt.setInt(1, getCodPaquete());
-            stmt.setString(2, getDescripcion());
-            stmt.setString(3, getDireccion());
-            stmt.setDouble(4, getPeso());
-            stmt.setDouble(5, getPrecio());
-            stmt.setInt(6, getIdRemitente());
-            stmt.setInt(7, getIdDestinatario());
-            stmt.setInt(8, getCodCanton());
-            stmt.execute();
-            stmt.close();
+            prt = con2.prepareStatement(sql);
+            prt.setInt(1, getCodPaquete());
+            prt.setString(2, getDescripcion());
+            prt.setString(3, getDireccion());
+            prt.setDouble(4, getPeso());
+            prt.setDouble(5, getPrecio());
+            prt.setInt(6, getIdRemitente());
+            prt.setInt(7, getIdDestinatario());
+            prt.setInt(8, getCodCanton());
+            prt.execute();
+            prt.close();
             return true;
         } catch (SQLException ex) {
             Logger.getLogger(ConexionBD.class.getName()).log(Level.SEVERE, null, ex);
             return false;
         }
+    }
+    
+    private String mensaje = "";
+    
+    public String Agregar_Paquetes(Connection con) {
+        PreparedStatement prt = null;
+        String sql = "INSERT INTO PAQUETES (codigopaquete, descripcion, direccion, peso, precio, idremitente, iddestinatario, codcanton) "
+                + "VALUES (?, ?, ?, ?, ?, ?, ?, ?)";
+        
+        try {
+            prt = con.prepareStatement(sql);
+            prt.setInt(1, getCodPaquete());
+            prt.setString(2, getDescripcion());
+            prt.setString(3, getDireccion());
+            prt.setDouble(4, getPeso());
+            prt.setDouble(5, getPrecio());
+            prt.setInt(6, getIdRemitente());
+            prt.setInt(7, getIdDestinatario());
+            prt.setInt(8, getCodCanton());
+            mensaje = "guardado correctamente";
+            prt.execute();
+            prt.close();
+        } catch (Exception e) {
+            mensaje = "no se pudo guardar correctamente \n" + e.getMessage();
+        }
+        return mensaje;
+    }
+    
+    public boolean Regi(){
+        
+        String sql = "INSERT INTO PAQUETES (codigopaquete, descripcion, direccion, peso, precio, idremitente, iddestinatario, codcanton) "
+                + "VALUES ("+ getCodPaquete() +", '" + getDescripcion() + "', '" + getDireccion() + "', " + getPeso() + ", " + getPrecio() 
+                + ", " + getIdRemitente() + ", " + getIdDestinatario() + ", " + getCodCanton() + ")";
+        return con.CRUD(sql);
     }
 
     public boolean ValidarCodigo() {
