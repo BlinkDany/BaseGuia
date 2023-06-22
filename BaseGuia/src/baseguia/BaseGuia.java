@@ -4,6 +4,10 @@
  */
 package baseguia;
 
+import Controlador.ControladorPaquetes;
+import Modelo.ModeloPaquetes;
+import vistas.VistaPaquetes;
+
 /**
  *
  * @author blink
@@ -15,6 +19,14 @@ public class BaseGuia {
      */
     public static void main(String[] args) {
         // TODO code application logic here
+        
+        Modelo.ModeloPaquetes v = new ModeloPaquetes();
+        VistaPaquetes vi = new VistaPaquetes();
+        ControladorPaquetes c = new ControladorPaquetes(v, vi);
+        
+        c.Iniciar();
+        
+        System.out.println("Menos ganas de vivir");
     }
     
 }
