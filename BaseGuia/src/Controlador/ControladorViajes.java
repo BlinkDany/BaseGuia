@@ -6,6 +6,8 @@ package Controlador;
 
 import Modelo.ModeloViajes;
 import Modelo.Viajes;
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
 import java.util.List;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
@@ -16,6 +18,7 @@ import vistas.VistaViajes;
  * @author blink
  */
 public class ControladorViajes {
+
     ModeloViajes mvi;
     VistaViajes vvia;
 
@@ -34,6 +37,13 @@ public class ControladorViajes {
         vvia.setTitle("Viajes");
         vvia.btnRegistrar.addActionListener(l -> Registrar());
         vvia.btnRefresh.addActionListener(l -> MostrarDatos());
+        vvia.lblBuscar.addMouseListener(new MouseAdapter() {
+            @Override
+            public void mouseClicked(MouseEvent e) {
+
+                Buscar();
+            }
+        });
     }
 
     public void Registrar() {
@@ -75,6 +85,23 @@ public class ControladorViajes {
 
             Object datos[] = {p.getCodviajes(), p.getFecha(), p.getIdConductor(), p.getMatriculaCamion()};
             modelo.addRow(datos);
+        });
+
+    }
+
+    public void Buscar() {
+
+        DefaultTableModel modelo = (DefaultTableModel) vvia.tblViajes.getModel();
+        modelo.setNumRows(0);
+        List<Viajes> listv = mvi.ListaViajes();
+
+        listv.stream().forEach(p -> {
+
+            if (p.getCodviajes() == Integer.valueOf(vvia.txtBuscar.getText())) {
+
+                Object datos[] = {p.getCodviajes(), p.getFecha(), p.getIdConductor(), p.getMatriculaCamion()};
+                modelo.addRow(datos);
+            }
         });
 
     }

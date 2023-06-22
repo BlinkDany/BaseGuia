@@ -2,6 +2,9 @@ package asd;
 
 import Modelo.Envios;
 import Modelo.ModeloEnvios;
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
+import java.awt.event.MouseListener;
 import java.sql.SQLException;
 import java.util.List;
 import java.util.logging.Level;
@@ -28,6 +31,14 @@ public class ControladorEnvio {
 
         ven.setTitle("Envios");
         MostrarDatos();
+        ven.btnRefresh.addActionListener(l -> MostrarDatos());
+        ven.lblBuscar.addMouseListener(new MouseAdapter() {
+            @Override
+            public void mouseClicked(MouseEvent e) {
+            
+                Buscar();
+            }
+        });
 
     }
 
@@ -43,13 +54,13 @@ public class ControladorEnvio {
                 men.setCodCanton(Integer.valueOf(ven.txtCanton.getText()));
 
                 if (men.ValidarCod()) {
-                    
+
                     men.setCodCanton(Integer.valueOf(ven.txtCanton.getText()));
                     men.setCodEnvios(Integer.valueOf(ven.txtCod.getText()));
                     men.setCodPaquete(Integer.valueOf(ven.txtIdPaquete.getText()));
                     men.setCodViaje(Integer.valueOf(ven.txtViaje.getText()));
                     men.setFehca(new java.sql.Date(ven.txtDate.getDate().getTime()));
-                    
+
                     if (men.Registrar()) {
                         MessageOk("Se ha registrado con exito");
                         MostrarDatos();
@@ -65,8 +76,8 @@ public class ControladorEnvio {
 
     }
 
-    public void MostrarDatos(){
-        
+    public void MostrarDatos() {
+
         DefaultTableModel modelo = (DefaultTableModel) ven.tblEnvios.getModel();
         modelo.setNumRows(0);
         List<Envios> listv = men.ListaEnvios();
@@ -76,9 +87,26 @@ public class ControladorEnvio {
             Object datos[] = {p.getCodEnvios(), p.getFehca(), p.getCodPaquete(), p.getCodCanton()};
             modelo.addRow(datos);
         });
-        
+
     }
-    
+
+    public void Buscar() {
+
+        DefaultTableModel modelo = (DefaultTableModel) ven.tblEnvios.getModel();
+        modelo.setNumRows(0);
+        List<Envios> listv = men.ListaEnvios();
+
+        listv.stream().forEach(p -> {
+
+            if (p.getCodEnvios() == Integer.valueOf(ven.txtBuscar.getText())) {
+
+                Object datos[] = {p.getCodEnvios(), p.getFehca(), p.getCodPaquete(), p.getCodCanton()};
+                modelo.addRow(datos);
+            }
+        });
+
+    }
+
     public void MessageOk(String mensaje) {
 
         JOptionPane.showMessageDialog(null, mensaje, "Advertencia", JOptionPane.INFORMATION_MESSAGE);

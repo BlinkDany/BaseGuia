@@ -29,7 +29,7 @@ public class VistaViajes extends javax.swing.JInternalFrame {
         jPanel1 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         lblBuscar = new javax.swing.JLabel();
-        jTextField1 = new javax.swing.JTextField();
+        txtBuscar = new javax.swing.JTextField();
         btnGuardar = new javax.swing.JButton();
         btnRefresh = new javax.swing.JButton();
         btnSalir = new javax.swing.JButton();
@@ -59,7 +59,7 @@ public class VistaViajes extends javax.swing.JInternalFrame {
 
         lblBuscar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/vistas/Iconos/buscar32.png"))); // NOI18N
 
-        jTextField1.setText("Buscar");
+        txtBuscar.setText("Buscar");
 
         btnGuardar.setBackground(new java.awt.Color(255, 255, 255));
         btnGuardar.setFont(new java.awt.Font("Yu Gothic Medium", 1, 13)); // NOI18N
@@ -180,7 +180,7 @@ public class VistaViajes extends javax.swing.JInternalFrame {
                         .addGap(18, 18, 18)
                         .addComponent(lblBuscar)
                         .addGap(18, 18, 18)
-                        .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 258, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(txtBuscar, javax.swing.GroupLayout.PREFERRED_SIZE, 258, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 20, Short.MAX_VALUE)
                         .addComponent(btnGuardar)
                         .addGap(18, 18, 18)
@@ -204,7 +204,7 @@ public class VistaViajes extends javax.swing.JInternalFrame {
                     .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                         .addComponent(jLabel1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(lblBuscar, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(jTextField1, javax.swing.GroupLayout.Alignment.TRAILING)))
+                        .addComponent(txtBuscar, javax.swing.GroupLayout.Alignment.TRAILING)))
                 .addGap(18, 18, 18)
                 .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -275,9 +275,9 @@ public class VistaViajes extends javax.swing.JInternalFrame {
     private javax.swing.JPanel jPanel2;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JSeparator jSeparator1;
-    public static javax.swing.JTextField jTextField1;
     public static javax.swing.JLabel lblBuscar;
     public static javax.swing.JTable tblViajes;
+    public static javax.swing.JTextField txtBuscar;
     public static javax.swing.JTextField txtCod;
     public static com.toedter.calendar.JDateChooser txtDate;
     public static LIB.FSTexFieldMD txtIdConductor;
