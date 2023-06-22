@@ -41,7 +41,19 @@ public class ControladorViajes {
             @Override
             public void mouseClicked(MouseEvent e) {
 
-                Buscar();
+                if (vvia.txtBuscar.getText().isEmpty()) {
+                    MessageError("Ingrese un valor");
+                } else {
+                    
+                    Buscar();
+                }
+            }
+        });
+        vvia.tblViajes.addMouseListener(new MouseAdapter() {
+            @Override
+            public void mouseClicked(MouseEvent e) {
+
+                LlenarDatos();
             }
         });
     }
@@ -87,6 +99,23 @@ public class ControladorViajes {
             modelo.addRow(datos);
         });
 
+    }
+    
+    public void LlenarDatos(){
+        
+        List<Viajes> listv = mvi.ListaViajes();
+
+        listv.stream().forEach(p -> {
+
+            if (p.getCodviajes() == Integer.valueOf(vvia.tblViajes.getValueAt(vvia.tblViajes.getSelectedRow(), 0).hashCode())) {
+
+                vvia.txtCod.setText(String.valueOf(p.getCodviajes()));
+                vvia.txtDate.setDate(p.getFecha());
+                vvia.txtIdConductor.setText(String.valueOf(p.getIdConductor()));
+                vvia.txtMatricula.setText(String.valueOf(p.getMatriculaCamion()));
+            }
+        });
+        
     }
 
     public void Buscar() {
