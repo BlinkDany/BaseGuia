@@ -17,7 +17,7 @@ import javax.swing.JTextField;
  *
  * @author tatip
  */
-public class VistaCamion extends javax.swing.JFrame {
+public class VistaCamion extends javax.swing.JInternalFrame {
 
     /**
      * Creates new form VistaCamion

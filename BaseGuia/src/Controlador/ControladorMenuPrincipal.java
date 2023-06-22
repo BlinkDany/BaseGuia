@@ -6,6 +6,7 @@
 package Controlador;
 
 import Modelo.Camiones;
+import Modelo.ModeloConductores;
 
 import Modelo.ModeloPaquetes;
 import Modelo.ModeloViajes;
@@ -21,6 +22,7 @@ import Modelo.provinciaModelo;
 import vistas.MenuPrincipal;
 import vistas.VistaCamion;
 import vistas.VistaCantones;
+import vistas.VistaConductor;
 
 import vistas.VistaProvincias;
 import vistas.VistaViajes;
@@ -46,6 +48,9 @@ public class ControladorMenuPrincipal {
         vistaPrincipal.getBtnCamiones().addActionListener(l ->menuCamiones() );
         vistaPrincipal.getBtnCantones().addActionListener(l -> menuCantones());
         vistaPrincipal.getBtnProvincias().addActionListener(l -> menuProvincias());
+        vistaPrincipal.getBtnPaquete().addActionListener(l -> menuPaquetes());
+        vistaPrincipal.getBtnViajes().addActionListener(l -> menuViajes());
+        vistaPrincipal.getBtnConductores().addActionListener(l -> menuConductor());
     }
     
     private void menuCamiones () { 
@@ -114,6 +119,21 @@ public class ControladorMenuPrincipal {
         cp.Iniciar();
         
 }
+    
+    
+    private void menuConductor () { 
+        
+        Modelo.ModeloConductores mod = new ModeloConductores();
+             
+        vistas.VistaConductor vpa = new VistaConductor();
+
+        vistaPrincipal.getDesctopPrincipal().add(vpa);
+        
+        Controlador.ControladorConductor cp = new ControladorConductor(mod, vpa);
+        cp.Iniciar();
+        
+}
+    
     
     
      
