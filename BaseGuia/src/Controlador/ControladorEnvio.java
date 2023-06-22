@@ -1,10 +1,12 @@
 package asd;
 
+import Conexion.ConexionBD;
 import Modelo.Envios;
 import Modelo.ModeloEnvios;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
+import java.sql.Connection;
 import java.sql.SQLException;
 import java.util.List;
 import java.util.logging.Level;
@@ -73,7 +75,8 @@ public class ControladorEnvio {
                     men.setCodViaje(Integer.valueOf(ven.txtViaje.getText()));
                     men.setFehca(new java.sql.Date(ven.txtDate.getDate().getTime()));
 
-                    if (men.Registrar()) {
+                    Connection con = ConexionBD.getConnection();
+                    if (men.Regi(con)) {
                         MessageOk("Se ha registrado con exito");
                         MostrarDatos();
                     } else {
