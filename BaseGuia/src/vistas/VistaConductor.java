@@ -12,7 +12,7 @@ import javax.swing.JTable;
  *
  * @author Derek
  */
-public class VistaConductor extends javax.swing.JFrame {
+public class VistaConductor extends javax.swing.JInternalFrame {
     public VistaConductor() {
         initComponents();
     }
@@ -492,7 +492,11 @@ public class VistaConductor extends javax.swing.JFrame {
                     .addContainerGap(177, Short.MAX_VALUE)))
         );
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setClosable(true);
+        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
+        setIconifiable(true);
+        setMaximizable(true);
+        setResizable(true);
 
         btnconductor.setIcon(new javax.swing.ImageIcon(getClass().getResource("/vistas/Iconos/conductor64.png"))); // NOI18N
         btnconductor.setText("AGREGAR");

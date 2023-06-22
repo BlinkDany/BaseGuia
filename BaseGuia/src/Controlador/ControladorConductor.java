@@ -27,8 +27,8 @@ public class ControladorConductor {
     public ControladorConductor() {
     }
 
-    public ControladorConductor(Modelo.Conductores mcod, vistas.VistaConductor vcod,ModeloRemitente mrem,ModeloDestinatario mdest) {
-        this.mcod = (ModeloConductores) mcod;
+    public ControladorConductor(ModeloConductores mcod, vistas.VistaConductor vcod,ModeloRemitente mrem,ModeloDestinatario mdest) {
+        this.mcod = mcod;
         this.vcod = vcod;
         this.mrem = mrem;
         this.mdest = mdest;
@@ -39,7 +39,6 @@ public class ControladorConductor {
 
         MostrarDatos();
         vcod.setTitle("Conductor");
-        vcod.setLocationRelativeTo(null);
         vcod.getBtnregistrar().addActionListener(l-> RegistrarConductor());
         vcod.getBtnlimpiar().addActionListener(l-> limpiar());
         vcod.getBtnagregarremi().addActionListener(l-> llenarCamposDeTextoRemitente());

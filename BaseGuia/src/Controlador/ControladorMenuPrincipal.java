@@ -6,11 +6,14 @@
 package Controlador;
 
 import Modelo.Camiones;
+import Modelo.Conductores;
 import Modelo.Envios;
 import Modelo.ModeloConductores;
+import Modelo.ModeloDestinatario;
 import Modelo.ModeloEnvios;
 
 import Modelo.ModeloPaquetes;
+import Modelo.ModeloRemitente;
 import Modelo.ModeloViajes;
 
 import Modelo.Paquetes;
@@ -132,12 +135,15 @@ public class ControladorMenuPrincipal {
     private void menuConductor() {
 
         Modelo.ModeloConductores mod = new ModeloConductores();
+        Conductores con = new Conductores();
+        ModeloRemitente mrem = new ModeloRemitente();
+        ModeloDestinatario mdest = new ModeloDestinatario();
 
         vistas.VistaConductor vpa = new VistaConductor();
 
         vistaPrincipal.getDesctopPrincipal().add(vpa);
 
-        Controlador.ControladorConductor cp = new ControladorConductor(mod, vpa);
+        Controlador.ControladorConductor cp = new ControladorConductor(mod, vpa, mrem, mdest);
         cp.Iniciar();
 
     }
