@@ -4,9 +4,10 @@
  */
 package baseguia;
 
-import Controlador.ControladorPaquetes;
+import Controlador.*;
 import Modelo.ModeloPaquetes;
-import vistas.VistaPaquetes;
+import Modelo.ModeloViajes;
+import vistas.*;
 
 /**
  *
@@ -20,9 +21,9 @@ public class BaseGuia {
     public static void main(String[] args) {
         // TODO code application logic here
         
-        Modelo.ModeloPaquetes v = new ModeloPaquetes();
-        VistaPaquetes vi = new VistaPaquetes();
-        ControladorPaquetes c = new ControladorPaquetes(v, vi);
+        Modelo.ModeloViajes v = new ModeloViajes();
+        VistaViajes vi = new VistaViajes();
+        ControladorViajes c = new ControladorViajes(v, vi);
         
         c.Iniciar();
         
