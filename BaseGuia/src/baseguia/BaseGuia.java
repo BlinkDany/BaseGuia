@@ -6,7 +6,7 @@ package baseguia;
 
 import Controlador.ControladorPaquetes;
 import Modelo.ModeloPaquetes;
-import vistas.VistaPaquetes;
+import Vista.VistaPaquetes;
 
 /**
  *
