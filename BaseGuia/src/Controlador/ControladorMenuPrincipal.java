@@ -6,27 +6,25 @@
 package Controlador;
 
 import Modelo.Camiones;
-//import Modelo.Conductores;
-//import Modelo.ModeloConductores//
-//import Modelo.ModeloDestinatario;
+
 import Modelo.ModeloPaquetes;
-//import Modelo.ModeloRemitente;
-//import Modelo.ModeloViajes;
+import Modelo.ModeloViajes;
+
 import Modelo.Paquetes;
-//import Modelo.Persona;
-//import Modelo.Viajes;
+
 import Modelo.camionModelo;
 import Modelo.cantonModelo;
 import Modelo.cantones;
-//import Modelo.destinatario;
+
 import Modelo.provincia;
 import Modelo.provinciaModelo;
 import vistas.MenuPrincipal;
 import vistas.VistaCamion;
 import vistas.VistaCantones;
-//import vistas.VistaConductor;
+
 import vistas.VistaProvincias;
-//import vistas.VistaViajes;
+import vistas.VistaViajes;
+
 
 
 
@@ -90,6 +88,34 @@ public class ControladorMenuPrincipal {
         
 }
      
+     private void menuPaquetes () { 
+        
+        Modelo.ModeloPaquetes mod = new ModeloPaquetes();
+             
+        Vista.VistaPaquetes vpa = new Vista.VistaPaquetes();
+
+        vistaPrincipal.getDesctopPrincipal().add(vpa);
+        
+        Controlador.ControladorPaquetes cp = new ControladorPaquetes(mod, vpa);
+        cp.Iniciar();
+        
+}
+     
+     
+    private void menuViajes () { 
+        
+        Modelo.ModeloViajes mod = new ModeloViajes();
+             
+        vistas.VistaViajes vpa = new VistaViajes();
+
+        vistaPrincipal.getDesctopPrincipal().add(vpa);
+        
+        Controlador.ControladorViajes cp = new ControladorViajes(mod, vpa);
+        cp.Iniciar();
+        
+}
+    
+    
      
 }
 
