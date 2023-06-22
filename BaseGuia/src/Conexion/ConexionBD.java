@@ -1,7 +1,3 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package Conexion;
 
 import java.sql.Connection;
@@ -20,13 +16,12 @@ import oracle.jdbc.datasource.impl.OracleDataSource;
  */
 public class ConexionBD {
     
-    private static Connection conn = null;
     private static String login = "Daniel";
     private static String clave = "dan23";
     private static String url = "jdbc:oracle:thin:@localhost:1521:xe";
     
-    private Connection con = null;
-    private Statement st;
+    private static Connection con = null;
+    private static Statement st;
     
     public ConexionBD(){
         
@@ -35,11 +30,26 @@ public class ConexionBD {
             ods.setURL("jdbc:oracle:thin:@localhost:1521:XE");
             ods.setUser(login);
             ods.setPassword(clave);
-            conn = ods.getConnection();
+            con = ods.getConnection();
             System.out.println("conectado");
         } catch (SQLException ex) {
             JOptionPane.showMessageDialog(null, "¡Error de conexión!", null, JOptionPane.ERROR_MESSAGE);
         }
+    }
+    
+    public static Connection getConnection() {
+        try {
+            OracleDataSource ods = new OracleDataSource();
+            ods.setURL("jdbc:oracle:thin:@localhost:1521:XE");
+            ods.setUser(login);
+            ods.setPassword(clave);
+            con = ods.getConnection();
+            System.out.println("conectado");
+        } catch (SQLException ex) {
+            JOptionPane.showMessageDialog(null, "¡Error de conexión!", null, JOptionPane.ERROR_MESSAGE);
+        }
+
+        return con;
     }
     
     public boolean CRUD(String sql) {
@@ -53,17 +63,6 @@ public class ConexionBD {
             Logger.getLogger(ConexionBD.class.getName()).log(Level.SEVERE, null, ex);
             return false;
         }
-    }
-
-    public PreparedStatement crear(String sql) {
-        PreparedStatement ps = null;
-        try {
-            ps = con.prepareStatement(sql);
-            
-        } catch (SQLException ex) {
-            Logger.getLogger(ConexionBD.class.getName()).log(Level.SEVERE, null, ex);
-        }
-        return ps;
     }
 
     public ResultSet Consultas(String SQL) {
