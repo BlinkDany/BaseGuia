@@ -54,7 +54,11 @@ public class VistaEnvios extends javax.swing.JInternalFrame {
         txtViaje = new LIB.FSTexFieldMD();
         txtCanton = new LIB.FSTexFieldMD();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setClosable(true);
+        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
+        setIconifiable(true);
+        setMaximizable(true);
+        setResizable(true);
 
         jPanel2.setBackground(new java.awt.Color(153, 102, 255));
 
@@ -347,32 +351,21 @@ public class VistaEnvios extends javax.swing.JInternalFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    public static javax.swing.JButton btnCamion;
     public static javax.swing.JButton btnCamion1;
-    public static javax.swing.JButton btnCanton;
     public static javax.swing.JButton btnCanton1;
-    public static javax.swing.JButton btnConductor;
     public static javax.swing.JButton btnConductor1;
-    public static javax.swing.JButton btnDestinatario;
     public static javax.swing.JButton btnDestinatario1;
-    public static javax.swing.JButton btnEnvios;
     public static javax.swing.JButton btnEnvios1;
     public static javax.swing.JButton btnGuardar;
-    public static javax.swing.JButton btnPaquetes;
     public static javax.swing.JButton btnPaquetes1;
-    public static javax.swing.JButton btnProvincia;
     public static javax.swing.JButton btnProvincia1;
     public static javax.swing.JButton btnRefresh;
-    public static javax.swing.JButton btnRemitente;
     public static javax.swing.JButton btnRemitente1;
     public static javax.swing.JButton btnSalir;
-    public static javax.swing.JButton btnViajes;
     public static javax.swing.JButton btnViajes1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
-    private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
-    private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel4;
     private javax.swing.JPanel jPanel5;
     private javax.swing.JScrollPane jScrollPane1;
