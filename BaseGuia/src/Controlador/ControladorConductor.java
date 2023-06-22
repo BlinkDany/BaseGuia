@@ -38,14 +38,14 @@ public class ControladorConductor {
         vcod.getJINTFConductores().setTitle("Registro de Conductores");
     }
 
-    /*public void RegistrarConductor() {
+    public void RegistrarConductor() {
 
-        if (vcod.txt|| vcod.txtCanton.getText().isEmpty() || vcod.txt.getText().isEmpty() || vcod.) {
+        /*if (vcod.txt|| vcod.txt.getText().isEmpty() || vcod.txt.getText().isEmpty() || vcod.) {
             
             MessageError("Faltan campos por llenar");
         } else {
             
-            mcod.setCodPaquete(Integer.parseInt(vcod.txtid.getText()));
+            mcod.setIdConductor(Integer.parseInt(vcod.txtid.getText()));
             
             if (mcod.ValidarID()) {
                 
@@ -64,8 +64,8 @@ public class ControladorConductor {
                 
                 MessageError("El codigo del conductor ya existe");
             }
-        }
-    }*/
+        }*/
+    }
     
     public void MostrarDatos(){
         
