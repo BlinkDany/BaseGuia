@@ -29,7 +29,7 @@ public class camionModelo extends Camiones{
 
         try {
 
-            String sql = "SELECT * FROM public.camiones";
+            String sql = "SELECT * FROM camiones";
 
             ResultSet rs = con.Consultas(sql);
 
@@ -42,7 +42,7 @@ public class camionModelo extends Camiones{
                 miKmi.setMatricula(rs.getString("matricula"));
                 miKmi.setMarca(rs.getString("marca"));
                 miKmi.setModelo(rs.getString("modelo"));
-                miKmi.setPotencia(rs.getString("potencia"));
+                miKmi.setPotencia(rs.getString("PTENCIA"));
                
                 camList.add(miKmi);
 
