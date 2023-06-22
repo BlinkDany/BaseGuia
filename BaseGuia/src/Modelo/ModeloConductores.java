@@ -1,6 +1,8 @@
 
 package Modelo;
 
+import Conexion.ConexionBD;
+import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
@@ -14,7 +16,7 @@ import java.util.logging.Logger;
  */
 public class ModeloConductores extends Conductores{
     
-    ConexionBD.ConexionSQL cpg = new ConexionBD.ConexionSQL();
+    ConexionBD cpg = new ConexionBD();
     ResultSet rs = null;
     String sql;
     

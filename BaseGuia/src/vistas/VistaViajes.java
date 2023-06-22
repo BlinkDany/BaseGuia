@@ -41,7 +41,7 @@ public class VistaViajes extends javax.swing.JFrame {
         lblBuscar = new javax.swing.JLabel();
         jTextField1 = new javax.swing.JTextField();
         btnGuardar = new javax.swing.JButton();
-        btnLimpiar = new javax.swing.JButton();
+        btnRefresh = new javax.swing.JButton();
         btnSalir = new javax.swing.JButton();
         jSeparator1 = new javax.swing.JSeparator();
         jScrollPane1 = new javax.swing.JScrollPane();
@@ -54,7 +54,6 @@ public class VistaViajes extends javax.swing.JFrame {
         txtMatricula = new LIB.FSTexFieldMD();
         btnRegistrar = new javax.swing.JButton();
         btnLimp = new javax.swing.JButton();
-        btnRegresar = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -157,10 +156,10 @@ public class VistaViajes extends javax.swing.JFrame {
         btnGuardar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/vistas/Iconos/guardar32.jpg"))); // NOI18N
         btnGuardar.setText("Guardar");
 
-        btnLimpiar.setBackground(new java.awt.Color(255, 255, 255));
-        btnLimpiar.setFont(new java.awt.Font("Yu Gothic Medium", 1, 13)); // NOI18N
-        btnLimpiar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/vistas/Iconos/limpiar32.png"))); // NOI18N
-        btnLimpiar.setText("Limpiar");
+        btnRefresh.setBackground(new java.awt.Color(255, 255, 255));
+        btnRefresh.setFont(new java.awt.Font("Yu Gothic Medium", 1, 13)); // NOI18N
+        btnRefresh.setIcon(new javax.swing.ImageIcon(getClass().getResource("/vistas/Iconos/limpiar32.png"))); // NOI18N
+        btnRefresh.setText("Refresh");
 
         btnSalir.setBackground(new java.awt.Color(255, 255, 255));
         btnSalir.setFont(new java.awt.Font("Yu Gothic Medium", 1, 13)); // NOI18N
@@ -217,11 +216,6 @@ public class VistaViajes extends javax.swing.JFrame {
         btnLimp.setIcon(new javax.swing.ImageIcon(getClass().getResource("/vistas/Iconos/limpiar32.png"))); // NOI18N
         btnLimp.setText("Limpiar");
 
-        btnRegresar.setBackground(new java.awt.Color(255, 255, 255));
-        btnRegresar.setFont(new java.awt.Font("Yu Gothic Medium", 1, 13)); // NOI18N
-        btnRegresar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/vistas/Iconos/salir32.jpg"))); // NOI18N
-        btnRegresar.setText("Salir");
-
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
         jPanel2Layout.setHorizontalGroup(
@@ -235,8 +229,6 @@ public class VistaViajes extends javax.swing.JFrame {
                     .addComponent(txtCod)
                     .addGroup(jPanel2Layout.createSequentialGroup()
                         .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 218, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(btnRegresar)
                         .addGap(0, 0, Short.MAX_VALUE)))
                 .addContainerGap())
             .addGroup(jPanel2Layout.createSequentialGroup()
@@ -244,15 +236,13 @@ public class VistaViajes extends javax.swing.JFrame {
                 .addComponent(btnRegistrar)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(btnLimp)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(545, Short.MAX_VALUE))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel2Layout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(jLabel2)
-                    .addComponent(btnRegresar))
+                .addGap(18, 18, 18)
+                .addComponent(jLabel2)
                 .addGap(18, 18, 18)
                 .addComponent(txtCod, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
@@ -285,7 +275,7 @@ public class VistaViajes extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 44, Short.MAX_VALUE)
                         .addComponent(btnGuardar)
                         .addGap(18, 18, 18)
-                        .addComponent(btnLimpiar, javax.swing.GroupLayout.PREFERRED_SIZE, 125, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(btnRefresh, javax.swing.GroupLayout.PREFERRED_SIZE, 125, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
                         .addComponent(btnSalir, javax.swing.GroupLayout.PREFERRED_SIZE, 125, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addComponent(jSeparator1)
@@ -300,7 +290,7 @@ public class VistaViajes extends javax.swing.JFrame {
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                         .addComponent(btnGuardar)
-                        .addComponent(btnLimpiar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(btnRefresh, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(btnSalir))
                     .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                         .addComponent(jLabel1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -373,11 +363,10 @@ public class VistaViajes extends javax.swing.JFrame {
     public static javax.swing.JButton btnEnvios;
     public static javax.swing.JButton btnGuardar;
     public static javax.swing.JButton btnLimp;
-    public static javax.swing.JButton btnLimpiar;
     public static javax.swing.JButton btnPaquetes;
     public static javax.swing.JButton btnProvincia;
+    public static javax.swing.JButton btnRefresh;
     public static javax.swing.JButton btnRegistrar;
-    public static javax.swing.JButton btnRegresar;
     public static javax.swing.JButton btnRemitente;
     public static javax.swing.JButton btnSalir;
     public static javax.swing.JButton btnViajes;

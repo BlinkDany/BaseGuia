@@ -1,7 +1,8 @@
 
 package Modelo;
 
-import ConexionBD.ConexionSQL;
+import Conexion.ConexionBD;
+import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
@@ -14,7 +15,7 @@ import java.util.logging.Logger;
  * @author Derek
  */
 public class ModeloRemitente extends Remitente{
-    ConexionBD.ConexionSQL cpg = new ConexionSQL();
+    ConexionBD cpg = new ConexionBD();
     ResultSet rs = null;
     String sql;
     
