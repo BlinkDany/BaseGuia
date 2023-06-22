@@ -29,6 +29,14 @@ public class MenuPrincipal extends javax.swing.JFrame {
         initComponents();
     }
 
+    public JButton getBtnCantones() {
+        return btnCantones;
+    }
+
+    public void setBtnCantones(JButton btnCantones) {
+        this.btnCantones = btnCantones;
+    }
+
     public JButton getBtnCamiones() {
         return btnCamiones;
     }
@@ -140,6 +148,8 @@ public class MenuPrincipal extends javax.swing.JFrame {
         btnConductores = new javax.swing.JButton();
         jSeparator11 = new javax.swing.JToolBar.Separator();
         btnCamiones = new javax.swing.JButton();
+        jSeparator8 = new javax.swing.JToolBar.Separator();
+        btnCantones = new javax.swing.JButton();
         jPanel2 = new javax.swing.JPanel();
         jPanel3 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
@@ -218,6 +228,14 @@ public class MenuPrincipal extends javax.swing.JFrame {
         btnCamiones.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         btnCamiones.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
         toolBar.add(btnCamiones);
+        toolBar.add(jSeparator8);
+
+        btnCantones.setIcon(new javax.swing.ImageIcon(getClass().getResource("/vistas/Iconos/canton64.png"))); // NOI18N
+        btnCantones.setToolTipText("Cantones");
+        btnCantones.setFocusable(false);
+        btnCantones.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        btnCantones.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
+        toolBar.add(btnCantones);
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -331,6 +349,7 @@ public class MenuPrincipal extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnCamiones;
+    private javax.swing.JButton btnCantones;
     private javax.swing.JButton btnConductores;
     private javax.swing.JButton btnDestinarios;
     private javax.swing.JButton btnEnvios;
@@ -353,6 +372,7 @@ public class MenuPrincipal extends javax.swing.JFrame {
     private javax.swing.JToolBar.Separator jSeparator5;
     private javax.swing.JToolBar.Separator jSeparator6;
     private javax.swing.JToolBar.Separator jSeparator7;
+    private javax.swing.JToolBar.Separator jSeparator8;
     private javax.swing.JToolBar.Separator jSeparator9;
     private javax.swing.JToolBar toolBar;
     // End of variables declaration//GEN-END:variables
