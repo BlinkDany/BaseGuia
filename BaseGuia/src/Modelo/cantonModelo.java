@@ -5,7 +5,8 @@
  */
 package Modelo;
 
-import ConexionBD.ConexionSQL;
+import Conexion.ConexionBD;
+
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
@@ -20,7 +21,7 @@ import java.util.logging.Logger;
 public class cantonModelo extends  cantones{
     
 
-    ConexionBD.ConexionSQL con = new ConexionSQL();
+    ConexionBD con = new ConexionBD();
     
     public cantonModelo (){
         
@@ -50,7 +51,7 @@ public class cantonModelo extends  cantones{
             rs.close();
             return listaCanton;
         } catch (SQLException ex) {
-            Logger.getLogger(ConexionSQL.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(ConexionBD.class.getName()).log(Level.SEVERE, null, ex);
 
             return null;
         }

@@ -50,7 +50,7 @@ public class camionModelo extends Camiones{
             rs.close();
             return camList;
         } catch (SQLException ex) {
-            Logger.getLogger(ConexionSQL.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(ConexionBD.class.getName()).log(Level.SEVERE, null, ex);
 
             return null;
         }

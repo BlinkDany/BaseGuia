@@ -5,7 +5,8 @@
  */
 package Modelo;
 
-import ConexionBD.ConexionSQL;
+
+import Conexion.ConexionBD;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
@@ -19,7 +20,7 @@ import java.util.logging.Logger;
  */
 public class provinciaModelo extends provincia{
     
-      ConexionBD.ConexionSQL con = new ConexionSQL();
+      ConexionBD con = new ConexionBD();
     
     public provinciaModelo (){
         
@@ -49,7 +50,7 @@ public class provinciaModelo extends provincia{
             rs.close();
             return listPro;
         } catch (SQLException ex) {
-            Logger.getLogger(ConexionSQL.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(ConexionBD.class.getName()).log(Level.SEVERE, null, ex);
 
             return null;
         }
