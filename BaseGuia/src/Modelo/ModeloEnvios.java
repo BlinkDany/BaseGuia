@@ -1,6 +1,7 @@
 package Modelo;
 
 import Conexion.ConexionBD;
+import Modelo.Envios;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
@@ -17,6 +18,27 @@ public class ModeloEnvios extends Envios {
         String sql = "INSERT INTO envios (codenvios, fecha, codviaje, codpaquete, codcanton) "
                 + "VALUES (" + getCodEnvios() + ", '" + getFehca() + "', " + getCodViaje() + ", " + getCodPaquete() + ", " + getCodCanton() + ");";
         return con.CRUD(sql);
+    }
+    
+    public boolean ValidarCod() throws SQLException{
+        
+            String sql = "SELECT COUNT(codenvios) FROM DANIEL.ENVIOS"
+                    + "WHERE = " + getCodEnvios() + "";
+            ResultSet res = con.Consultas(sql);
+            int count = 0;
+            boolean val = false;            
+            
+            while (res.next()) {
+                
+                count = res.getInt("COUNT(codenvios)");
+            }
+            
+            if (count == 0) {
+                
+                val = true;
+            }
+            
+            return val;
     }
     
     public List<Envios> ListaEnvios(){
