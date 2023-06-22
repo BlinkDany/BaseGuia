@@ -54,6 +54,7 @@ public class cantonesControlador {
     public void iniciaControl() {
         // Configuración inicial de la vista
         vista.setTitle("Cantones");
+        vista.btnRfresh.addActionListener(l -> mostrarDatosTablaCanton());
         vista.getTblCantones().addMouseListener(new MouseAdapter() {
 
             @Override

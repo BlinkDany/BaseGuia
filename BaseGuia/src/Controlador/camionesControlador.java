@@ -62,6 +62,7 @@ public class camionesControlador {
         // Asociación de   los botones
 
         VistaCamion.getBtnLimpiar1().addActionListener(l -> limpiarDlg());
+        VistaCamion.btnRfresh.addActionListener(l -> mostrarDatosTablaCamion());
         VistaCamion.getLblBuscar().addMouseListener(new MouseAdapter() {
             @Override
             public void mouseClicked(MouseEvent e) {

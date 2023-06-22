@@ -51,6 +51,7 @@ public class provinciaControlador {
 
         // Asociación de acciones a los botones
         vista.getBtnLimpiar().addActionListener(l -> limpiar());
+        vista.btnRfresh.addActionListener(l -> mostrarDatosTabla());
         vista.getLblBuscar().addMouseListener(new MouseAdapter() {
             @Override
             public void mouseClicked(MouseEvent e) {

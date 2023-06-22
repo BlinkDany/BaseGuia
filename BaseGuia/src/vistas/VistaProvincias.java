@@ -140,6 +140,7 @@ public class VistaProvincias extends javax.swing.JInternalFrame {
         txtBuscar = new javax.swing.JTextField();
         lblBuscar = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
+        btnRfresh = new javax.swing.JButton();
 
         jPanel4.setBackground(new java.awt.Color(255, 255, 255));
 
@@ -316,6 +317,8 @@ public class VistaProvincias extends javax.swing.JInternalFrame {
         jLabel1.setForeground(new java.awt.Color(0, 153, 255));
         jLabel1.setText("Provincias");
 
+        btnRfresh.setIcon(new javax.swing.ImageIcon(getClass().getResource("/vistas/Iconos/loop.png"))); // NOI18N
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
@@ -329,7 +332,9 @@ public class VistaProvincias extends javax.swing.JInternalFrame {
                         .addComponent(lblBuscar)
                         .addGap(18, 18, 18)
                         .addComponent(txtBuscar, javax.swing.GroupLayout.PREFERRED_SIZE, 208, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(159, 159, 159)
+                        .addGap(86, 86, 86)
+                        .addComponent(btnRfresh)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(btnAgregar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addGap(38, 38, 38)
                         .addComponent(btnSalir, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -351,9 +356,10 @@ public class VistaProvincias extends javax.swing.JInternalFrame {
                             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                                 .addComponent(txtBuscar, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addComponent(btnSalir)
-                                .addComponent(btnAgregar)))))
+                                .addComponent(btnAgregar))
+                            .addComponent(btnRfresh, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE))))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 534, Short.MAX_VALUE)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 538, Short.MAX_VALUE)
                 .addContainerGap())
         );
 
@@ -449,6 +455,7 @@ public class VistaProvincias extends javax.swing.JInternalFrame {
     private javax.swing.JButton btnAgregar;
     private javax.swing.JButton btnGuardar;
     private javax.swing.JButton btnLimpiar;
+    public static javax.swing.JButton btnRfresh;
     private javax.swing.JButton btnSalir;
     private javax.swing.JButton btnSalirDlg;
     private javax.swing.JDialog dlg;

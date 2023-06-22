@@ -187,6 +187,8 @@ public class VistaPaquetes extends javax.swing.JInternalFrame {
         btnRegistrar.setFont(new java.awt.Font("Yu Gothic Medium", 1, 13)); // NOI18N
         btnRegistrar.setText("Registrar");
 
+        btnRfresh.setIcon(new javax.swing.ImageIcon(getClass().getResource("/vistas/Iconos/loop.png"))); // NOI18N
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
