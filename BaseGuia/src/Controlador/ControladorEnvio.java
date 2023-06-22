@@ -32,6 +32,7 @@ public class ControladorEnvio {
         ven.setTitle("Envios");
         MostrarDatos();
         ven.btnRefresh.addActionListener(l -> MostrarDatos());
+        ven.btnGuardar.addActionListener(l -> Registrar());
         ven.lblBuscar.addMouseListener(new MouseAdapter() {
             @Override
             public void mouseClicked(MouseEvent e) {

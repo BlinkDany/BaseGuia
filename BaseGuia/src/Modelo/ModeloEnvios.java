@@ -2,6 +2,8 @@ package Modelo;
 
 import Conexion.ConexionBD;
 import Modelo.Envios;
+import java.sql.Connection;
+import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
@@ -18,6 +20,27 @@ public class ModeloEnvios extends Envios {
         String sql = "INSERT INTO envios (codenvios, fecha, codviaje, codpaquete, codcanton) "
                 + "VALUES (" + getCodEnvios() + ", '" + getFehca() + "', " + getCodViaje() + ", " + getCodPaquete() + ", " + getCodCanton() + ");";
         return con.CRUD(sql);
+    }
+    
+    public boolean Regi(Connection con2) {
+
+        PreparedStatement prt = null;
+        String sql = "INSERT INTO envios (codenvios, fecha, codviaje, codpaquete, codcanton) "
+                + "VALUES (?, ?, ?, ?, ?);";
+        try {
+            prt = con2.prepareStatement(sql);
+            prt.setInt(1, getCodPaquete());
+            prt.setDate(2, getFehca());
+            prt.setInt(3, getCodViaje());
+            prt.setInt(4, getCodPaquete());
+            prt.setInt(5, getCodCanton());
+            prt.execute();
+            prt.close();
+            return true;
+        } catch (SQLException ex) {
+            Logger.getLogger(ConexionBD.class.getName()).log(Level.SEVERE, null, ex);
+            return false;
+        }
     }
     
     public boolean ValidarCod() throws SQLException{
